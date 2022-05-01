@@ -33,5 +33,6 @@ public class Test01 {
         System.out.println(zs.introduce());
         zs.eat();
         lisi.sleep("沙发");
+        System.out.println("我就是试一试git");
     }
 }
