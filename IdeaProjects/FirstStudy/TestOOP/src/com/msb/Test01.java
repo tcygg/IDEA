@@ -34,7 +34,7 @@ public class Test01 {
         zs.eat();
         lisi.sleep("沙发");
         System.out.println("我就是试一试git");
-        System.out.println("我就是试一试git22211");
+        System.out.println("我就是试一试git22211dev_mac");
 
     }
 }
