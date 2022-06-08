@@ -13,5 +13,6 @@ public class Test {
 
         System.out.println(xusong.getAge());
         System.out.println(xusong.);
+        System.out.println(jsdajfdhnw);
     }
 }
