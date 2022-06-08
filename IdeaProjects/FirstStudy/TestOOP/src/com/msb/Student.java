@@ -17,7 +17,14 @@ public class Student {
     boolean bo;
     String name;
 
+    public Student(){
 
+    }
+    public Student(int c1,long num21){
+        this.c=c1;
+        this.num2=num21;
+
+    }
     public static void main(String[] args) {
         Student st=new Student();
         System.out.println(st.c);
