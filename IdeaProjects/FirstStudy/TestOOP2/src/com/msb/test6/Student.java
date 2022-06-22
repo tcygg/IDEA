@@ -43,4 +43,13 @@ public class Student {
     public void setHeight(double height) {
         this.height = height;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "age=" + age +
+                ", name='" + name + '\'' +
+                ", height=" + height +
+                '}';
+    }
 }

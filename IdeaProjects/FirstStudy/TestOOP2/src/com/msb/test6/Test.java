@@ -12,7 +12,8 @@ public class Test {
         Student xusong=new Student(19,"jack",178.3);
 
         System.out.println(xusong.getAge());
-        System.out.println(xusong.);
-        System.out.println(jsdajfdhnw);
+        System.out.println(xusong.toString());
+        System.out.println(xusong);
+
     }
 }
