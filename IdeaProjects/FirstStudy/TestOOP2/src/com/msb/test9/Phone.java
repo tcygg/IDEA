@@ -67,6 +67,7 @@ public class Phone {//手机类：
         }
     }
     public boolean equals11(Object obj){
+        //将obj转为Phone类型
         Phone other = (Phone)obj;
         if(this.getBrand()==other.getBrand() && this.getPrice()==other.getPrice() && this.getYear()==other.getYear())
         {
@@ -76,4 +77,5 @@ public class Phone {//手机类：
         }
 
     }
+
 }
