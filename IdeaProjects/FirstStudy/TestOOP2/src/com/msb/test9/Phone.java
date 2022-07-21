@@ -1,5 +1,7 @@
 package com.msb.test9;
 
+import java.util.Objects;
+
 /**
  * @Auther: ygg
  * @Date: 2022/6/8 - 06 - 08 - 19:16
@@ -78,4 +80,16 @@ public class Phone {//手机类：
 
     }
 
+
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || this.getClass() != o.getClass()) return false;
+        Phone phone = (Phone) o;
+        return Double.compare(phone.price, price) == 0 && year == phone.year && Objects.equals(brand, phone.brand);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, price, year);
+    }
 }
