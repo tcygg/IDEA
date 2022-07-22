@@ -25,6 +25,7 @@ public class ceshi2 {
         System.out.println("----谢谢你使用计算器666");
         System.out.println("----谢谢你使用计算器777");
         System.out.println("----谢谢你使用计算器888");
+        System.out.println("----谢谢你使用计算器zuihou1yici");
     }
 
 }
