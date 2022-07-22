@@ -2,12 +2,7 @@ package com.msb.test1;
 
 import java.util.Scanner;
 
-/**
- * @Auther: zhaoss
- * @Date: 2022/7/7 - 07 - 07 - 08:47
- * @Description: com.msb.test1
- * @version: 1.0
- */
+
 public class ceshi2 {
 
     public static void main(String[] args) {
@@ -29,6 +24,7 @@ public class ceshi2 {
         System.out.println("----谢谢你使用计算器555");
         System.out.println("----谢谢你使用计算器666");
         System.out.println("----谢谢你使用计算器777");
+        System.out.println("----谢谢你使用计算器888");
     }
 
 }
