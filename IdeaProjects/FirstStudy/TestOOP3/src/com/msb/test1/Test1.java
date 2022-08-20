@@ -1,5 +1,7 @@
 package com.msb.test1;
 
+import java.util.Scanner;
+
 /**
  * @Auther: zhaoss
  * @Date: 2022/6/27 - 06 - 27 - 04:15
@@ -8,6 +10,7 @@ package com.msb.test1;
  */
 public class Test1 {
     public static void main(String[] args) {
+
 
 
 //        Cat xiaohong=new Cat();
