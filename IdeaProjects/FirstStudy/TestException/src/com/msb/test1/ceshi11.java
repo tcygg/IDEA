@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @version: 1.0
  */
 public class ceshi11 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
        /* Scanner sc=new Scanner(System.in);
         int age = sc.nextInt();
         String name = sc.next();
@@ -24,14 +24,6 @@ public class ceshi11 {
 
         System.out.println(shuzu.length);
         System.out.println(shuzu2[5]);*/
-        try {
-            Class.forName("com.msb.test01.Test").newInstance();
-        } catch (InstantiationException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+        Class.forName("com.msb.test01.Test");
     }
 }

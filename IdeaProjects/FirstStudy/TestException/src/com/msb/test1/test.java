@@ -12,9 +12,10 @@ public class test {
     xusong.setAge(35);
     xusong.setName("许嵩");
     xusong.setSex("男");
-        System.out.println(xusong);
-        String st=new String();
+       // System.out.println(xusong);
+       /* String st=new String();
         st.hashCode();
-        System.out.println(Math.sin(1/3));
+        System.out.println(Math.sin(1/3));*/
     }
 }
+
