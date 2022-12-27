@@ -6,6 +6,7 @@ package com.msb.Test6;
  * @Description: com.msb.Test6
  * @version: 1.0
  */
+//测试一下git功能
 public class Water {
     int weight;
     String color;
