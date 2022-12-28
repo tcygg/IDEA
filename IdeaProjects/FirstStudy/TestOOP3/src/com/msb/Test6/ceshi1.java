@@ -12,6 +12,7 @@ public class ceshi1 {
         System.out.println(222);
         System.out.println(333);
         System.out.println("wojiushishiysi");
+        System.out.println(888);
     }
 
 }
