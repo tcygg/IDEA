@@ -58,17 +58,17 @@
     <dependencies>
         <!--mysqlConnector连接依赖-->
         <!-- 下面是本机安装数据库的版本依赖   -->
-        <!-- <dependency>
+         <dependency>
              <groupId>mysql</groupId>
              <artifactId>mysql-connector-java</artifactId>
              <version>8.0.30</version>
-         </dependency>-->
+         </dependency>
         <!-- 公司数据库的版本依赖   -->
-        <dependency>
+       <!-- <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.42</version>
-        </dependency>
+        </dependency>-->
 
         <!--mybatis 核心jar包-->
         <dependency>
@@ -127,6 +127,12 @@
             <artifactId>lombok</artifactId>
             <version>1.18.12</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.12.1</version>
         </dependency>
 
         <!--        allure报告-->

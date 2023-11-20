@@ -1,0 +1,8 @@
+2023-11-20 20:48:49 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from dept 
+2023-11-20 20:48:49 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-20 20:48:49 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- <==      Total: 5
+2023-11-20 20:48:49 INFO  [main] com.msb.ceshi.ceshiTest.testFindAll(ceshiTest.java:48) -- 测试一下mybatis01
+2023-11-20 20:48:49 INFO  [main] com.msb.ceshi.ceshiTest.testFindAll(ceshiTest.java:48) -- 测试一下mybatis01
+2023-11-20 20:48:49 INFO  [main] com.msb.ceshi.ceshiTest.testFindAll(ceshiTest.java:48) -- 测试一下mybatis01
+2023-11-20 20:48:49 INFO  [main] com.msb.ceshi.ceshiTest.testFindAll(ceshiTest.java:48) -- 测试一下mybatis01
+2023-11-20 20:48:49 INFO  [main] com.msb.ceshi.ceshiTest.testFindAll(ceshiTest.java:48) -- 测试一下mybatis01
