@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="aaa">
+<mapper namespace="com.msb.mapper.DeptMapper">
     <!--public List<Dept> findAll(){    }-->
-    <select id="findAll" resultType="com.msb.pojo.Dept" >
+    <select id="findAll" resultType="dept" >
         select * from dept
     </select>
 </mapper>

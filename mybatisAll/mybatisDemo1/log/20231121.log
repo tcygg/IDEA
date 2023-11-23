@@ -1,0 +1,18 @@
+2023-11-21 17:34:04 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from dept 
+2023-11-21 17:34:04 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-21 17:34:05 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- <==      Total: 4
+2023-11-21 19:33:57 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from dept 
+2023-11-21 19:33:57 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-21 19:33:57 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- <==      Total: 4
+2023-11-21 21:57:45 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from dept 
+2023-11-21 21:57:45 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-21 21:57:45 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- <==      Total: 5
+2023-11-21 21:59:34 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from dept 
+2023-11-21 21:59:34 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-21 21:59:34 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- <==      Total: 5
+2023-11-21 22:00:49 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from dept 
+2023-11-21 22:00:49 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-21 22:00:49 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- <==      Total: 6
+2023-11-21 22:02:41 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from dept 
+2023-11-21 22:02:41 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-21 22:02:41 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- <==      Total: 4

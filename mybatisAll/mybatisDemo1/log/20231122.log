@@ -1,0 +1,3 @@
+2023-11-22 12:50:08 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from dept 
+2023-11-22 12:50:08 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-22 12:50:08 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- <==      Total: 4

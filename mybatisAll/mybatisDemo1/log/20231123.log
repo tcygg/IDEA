@@ -1,0 +1,74 @@
+2023-11-23 15:58:33 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from dept 
+2023-11-23 15:58:34 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-23 15:58:34 DEBUG [main] aaa.findAll.debug(BaseJdbcLogger.java:143) -- <==      Total: 4
+2023-11-23 16:09:10 DEBUG [main] bbb.findAllEmp.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp 
+2023-11-23 16:09:10 DEBUG [main] bbb.findAllEmp.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-23 16:09:10 DEBUG [main] bbb.findAllEmp.debug(BaseJdbcLogger.java:143) -- <==      Total: 14
+2023-11-23 16:10:03 DEBUG [main] com.msb.mapper.EmpMapper.findAllEmp.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp 
+2023-11-23 16:10:03 DEBUG [main] com.msb.mapper.EmpMapper.findAllEmp.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-23 16:10:03 DEBUG [main] com.msb.mapper.EmpMapper.findAllEmp.debug(BaseJdbcLogger.java:143) -- <==      Total: 14
+2023-11-23 16:25:13 DEBUG [main] com.msb.mapper.EmpMapper.findOne.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where empno = 7566 
+2023-11-23 16:25:13 DEBUG [main] com.msb.mapper.EmpMapper.findOne.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-23 16:25:13 DEBUG [main] com.msb.mapper.EmpMapper.findOne.debug(BaseJdbcLogger.java:143) -- <==      Total: 1
+2023-11-23 16:27:29 DEBUG [main] com.msb.mapper.EmpMapper.findOne.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select job from emp where empno = 7566 
+2023-11-23 16:27:29 DEBUG [main] com.msb.mapper.EmpMapper.findOne.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-23 16:27:29 DEBUG [main] com.msb.mapper.EmpMapper.findOne.debug(BaseJdbcLogger.java:143) -- <==      Total: 1
+2023-11-23 16:35:51 DEBUG [main] com.msb.mapper.EmpMapper.findOne.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where empno = 7566 
+2023-11-23 16:35:51 DEBUG [main] com.msb.mapper.EmpMapper.findOne.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-23 16:35:51 DEBUG [main] com.msb.mapper.EmpMapper.findOne.debug(BaseJdbcLogger.java:143) -- <==      Total: 1
+2023-11-23 16:36:49 DEBUG [main] com.msb.mapper.EmpMapper.findAllEmp.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp 
+2023-11-23 16:36:49 DEBUG [main] com.msb.mapper.EmpMapper.findAllEmp.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-23 16:36:49 DEBUG [main] com.msb.mapper.EmpMapper.findAllEmp.debug(BaseJdbcLogger.java:143) -- <==      Total: 14
+2023-11-23 16:37:29 DEBUG [main] com.msb.mapper.EmpMapper.findOne.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where empno = 7566 
+2023-11-23 16:37:29 DEBUG [main] com.msb.mapper.EmpMapper.findOne.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-23 16:37:29 DEBUG [main] com.msb.mapper.EmpMapper.findOne.debug(BaseJdbcLogger.java:143) -- <==      Total: 1
+2023-11-23 16:39:12 DEBUG [main] com.msb.mapper.EmpMapper.findOne.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where empno = 7566 
+2023-11-23 16:39:12 DEBUG [main] com.msb.mapper.EmpMapper.findOne.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-23 16:39:12 DEBUG [main] com.msb.mapper.EmpMapper.findOne.debug(BaseJdbcLogger.java:143) -- <==      Total: 1
+2023-11-23 16:58:14 DEBUG [main] com.msb.mapper.EmpMapper.findAllEmp.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp 
+2023-11-23 16:58:14 DEBUG [main] com.msb.mapper.EmpMapper.findAllEmp.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-23 16:58:14 DEBUG [main] com.msb.mapper.EmpMapper.findAllEmp.debug(BaseJdbcLogger.java:143) -- <==      Total: 14
+2023-11-23 17:12:19 DEBUG [main] com.msb.mapper.EmpMapper.findEmpMap.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp 
+2023-11-23 17:12:20 DEBUG [main] com.msb.mapper.EmpMapper.findEmpMap.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-23 17:12:20 DEBUG [main] com.msb.mapper.EmpMapper.findEmpMap.debug(BaseJdbcLogger.java:143) -- <==      Total: 14
+2023-11-23 19:04:23 DEBUG [main] com.msb.mapper.EmpMapper2.findByEmpno.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where empno = ? 
+2023-11-23 19:04:23 DEBUG [main] com.msb.mapper.EmpMapper2.findByEmpno.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 7900(Integer)
+2023-11-23 19:04:23 DEBUG [main] com.msb.mapper.EmpMapper2.findByEmpno.debug(BaseJdbcLogger.java:143) -- <==      Total: 1
+2023-11-23 19:20:55 DEBUG [main] c.m.m.EmpMapper2.findEmpByDeptnoAndSal.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where deptno = ? and sal >= ? 
+2023-11-23 19:20:55 DEBUG [main] c.m.m.EmpMapper2.findEmpByDeptnoAndSal.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 20(Integer), 1500.0(Double)
+2023-11-23 19:20:55 DEBUG [main] c.m.m.EmpMapper2.findEmpByDeptnoAndSal.debug(BaseJdbcLogger.java:143) -- <==      Total: 3
+2023-11-23 19:27:20 DEBUG [main] c.m.m.EmpMapper2.findEmpByDeptnoAndSal2.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where deptno = ? and sal >= ? 
+2023-11-23 19:27:20 DEBUG [main] c.m.m.EmpMapper2.findEmpByDeptnoAndSal2.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 10(Integer), 2000.0(Double)
+2023-11-23 19:27:20 DEBUG [main] c.m.m.EmpMapper2.findEmpByDeptnoAndSal2.debug(BaseJdbcLogger.java:143) -- <==      Total: 2
+2023-11-23 19:36:12 DEBUG [main] com.msb.mapper.EmpMapperDml.addEmp.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: insert into emp values(?,?,?,?,?,?,?,?) 
+2023-11-23 19:36:12 DEBUG [main] com.msb.mapper.EmpMapperDml.addEmp.debug(BaseJdbcLogger.java:143) -- ==> Parameters: null, 按住啦Baby(String), SALESMAN(String), 7839(Integer), 2023-11-23 19:36:12.143(Timestamp), 3100.0(Double), 200.0(Double), 10(Integer)
+2023-11-23 19:37:10 DEBUG [main] com.msb.mapper.EmpMapperDml.addEmp.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: insert into emp values(?,?,?,?,?,?,?,?) 
+2023-11-23 19:37:10 DEBUG [main] com.msb.mapper.EmpMapperDml.addEmp.debug(BaseJdbcLogger.java:143) -- ==> Parameters: null, 按住啦Baby(String), SALESMAN(String), 7839(Integer), 2023-11-23 19:37:10.286(Timestamp), 3100.0(Double), 200.0(Double), 10(Integer)
+2023-11-23 19:37:10 DEBUG [main] com.msb.mapper.EmpMapperDml.addEmp.debug(BaseJdbcLogger.java:143) -- <==    Updates: 1
+2023-11-23 19:39:27 DEBUG [main] com.msb.mapper.EmpMapperDml.addEmp.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: insert into emp values(?,?,?,?,?,?,?,?) 
+2023-11-23 19:39:27 DEBUG [main] com.msb.mapper.EmpMapperDml.addEmp.debug(BaseJdbcLogger.java:143) -- ==> Parameters: null, 按住啦Baby(String), SALESMAN(String), 7839(Integer), 2023-11-23 19:39:27.042(Timestamp), 3100.0(Double), 200.0(Double), 10(Integer)
+2023-11-23 19:39:27 DEBUG [main] com.msb.mapper.EmpMapperDml.addEmp.debug(BaseJdbcLogger.java:143) -- <==    Updates: 1
+2023-11-23 19:42:32 DEBUG [main] com.msb.mapper.EmpMapperDml.updateEmp.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: update emp set ename = ? where empno=? 
+2023-11-23 19:42:32 DEBUG [main] com.msb.mapper.EmpMapperDml.updateEmp.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 晓明(String), 7566(Integer)
+2023-11-23 19:42:32 DEBUG [main] com.msb.mapper.EmpMapperDml.updateEmp.debug(BaseJdbcLogger.java:143) -- <==    Updates: 1
+2023-11-23 19:48:49 DEBUG [main] com.msb.mapper.EmpMapperDml.addEmp.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: insert into emp values(?,?,?,?,?,?,?,?) 
+2023-11-23 19:48:49 DEBUG [main] com.msb.mapper.EmpMapperDml.addEmp.debug(BaseJdbcLogger.java:143) -- ==> Parameters: null, 按住啦Baby(String), SALESMAN(String), 7839(Integer), 2023-11-23 19:48:48.801(Timestamp), 3100.0(Double), 200.0(Double), 10(Integer)
+2023-11-23 19:48:49 DEBUG [main] com.msb.mapper.EmpMapperDml.addEmp.debug(BaseJdbcLogger.java:143) -- <==    Updates: 1
+2023-11-23 19:53:18 DEBUG [main] com.msb.mapper.EmpMapperDml.addEmp.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: insert into emp values(?,?,?,?,?,?,?,?) 
+2023-11-23 19:53:18 DEBUG [main] com.msb.mapper.EmpMapperDml.addEmp.debug(BaseJdbcLogger.java:143) -- ==> Parameters: null, 按住啦Baby(String), SALESMAN(String), 7839(Integer), 2023-11-23 19:53:18.222(Timestamp), 3100.0(Double), 200.0(Double), 10(Integer)
+2023-11-23 19:53:18 DEBUG [main] com.msb.mapper.EmpMapperDml.addEmp.debug(BaseJdbcLogger.java:143) -- <==    Updates: 1
+2023-11-23 19:53:38 DEBUG [main] com.msb.mapper.EmpMapperDml.addEmp.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: insert into emp values(?,?,?,?,?,?,?,?) 
+2023-11-23 19:53:38 DEBUG [main] com.msb.mapper.EmpMapperDml.addEmp.debug(BaseJdbcLogger.java:143) -- ==> Parameters: null, 按住啦Baby(String), SALESMAN(String), 7839(Integer), 2023-11-23 19:53:38.32(Timestamp), 3100.0(Double), 200.0(Double), 10(Integer)
+2023-11-23 19:53:38 DEBUG [main] com.msb.mapper.EmpMapperDml.addEmp.debug(BaseJdbcLogger.java:143) -- <==    Updates: 1
+2023-11-23 19:54:08 DEBUG [main] com.msb.mapper.EmpMapperDml.updateEmp.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: update emp set ename = ? where empno=? 
+2023-11-23 19:54:08 DEBUG [main] com.msb.mapper.EmpMapperDml.updateEmp.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 晓明(String), 7939(Integer)
+2023-11-23 19:54:08 DEBUG [main] com.msb.mapper.EmpMapperDml.updateEmp.debug(BaseJdbcLogger.java:143) -- <==    Updates: 1
+2023-11-23 19:54:31 DEBUG [main] com.msb.mapper.EmpMapperDml.updateEmp.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: update emp set ename = ? where empno=? 
+2023-11-23 19:54:31 DEBUG [main] com.msb.mapper.EmpMapperDml.updateEmp.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 晓明(String), 7939(Integer)
+2023-11-23 19:54:31 DEBUG [main] com.msb.mapper.EmpMapperDml.updateEmp.debug(BaseJdbcLogger.java:143) -- <==    Updates: 1
+2023-11-23 19:55:53 DEBUG [main] com.msb.mapper.EmpMapperDml.deleteEmp.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: delete from emp where empno >= ? 
+2023-11-23 19:55:53 DEBUG [main] com.msb.mapper.EmpMapperDml.deleteEmp.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 7937(Integer)
+2023-11-23 19:55:53 DEBUG [main] com.msb.mapper.EmpMapperDml.deleteEmp.debug(BaseJdbcLogger.java:143) -- <==    Updates: 2
+2023-11-23 19:57:36 DEBUG [main] com.msb.mapper.EmpMapperDml.deleteEmp.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: delete from emp where empno >= ? 
+2023-11-23 19:57:36 DEBUG [main] com.msb.mapper.EmpMapperDml.deleteEmp.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 7937(Integer)
+2023-11-23 19:57:36 DEBUG [main] com.msb.mapper.EmpMapperDml.deleteEmp.debug(BaseJdbcLogger.java:143) -- <==    Updates: 2

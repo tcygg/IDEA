@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.msb.mapper.EmpMapperDml">
+    <!--
+    返回单个对象
+    public Emp findOne();
+    id 相当于方法名
+    resultType 相当于返回值类型
+        sql语句的查询结果用哪个类来进行封装 如果返回值类型是集合,这里写的也是集合中的元素对应的类,不是集合本身作为类型
+    paramaterType 参数类型
+    SQL语句就是具体的方法体的实现
+    -->
+
+    <resultMap id="BaseResultMap" type="com.msb.pojo.Emp">
+        <id property="empno" column="EMPNO" jdbcType="INTEGER"/>
+        <result property="ename" column="ENAME" jdbcType="VARCHAR"/>
+        <result property="job" column="JOB" jdbcType="VARCHAR"/>
+        <result property="mgr" column="MGR" jdbcType="INTEGER"/>
+        <result property="hiredate" column="HIREDATE" jdbcType="DATE"/>
+        <result property="sal" column="SAL" jdbcType="DOUBLE"/>
+        <result property="comm" column="COMM" jdbcType="DOUBLE"/>
+        <result property="deptno" column="DEPTNO" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        EMPNO
+        ,ENAME,JOB,
+        MGR,HIREDATE,SAL,
+        COMM,DEPTNO
+    </sql>
+    <!--
+    参数为一个基本数据类型
+    根据员工工号查询员工的全部信息,返回单个员工对象
+    public Emp findByEmpno(int empno);
+    parameterType 在有参数情况下也是可以省略不写  mybatis 可以根据实际情况自动判断
+    如果要写parameterType 那么就要写对
+    在SQL语句上可以使用${}  #{} 代表参数的占位
+    如果参数是单个基本数据类型,{}中名字可以随便写,见名知意
+    ${} 代表mybatis底层使用Statment语句对象,参数是以字符串拼接的形式设置
+    #{} 代表mybatis底层使用的preparedStatment语句对象,参数使用?作为占位符处理
+    #{} 以后常用
+    -->
+
+    <!--
+       增删方法的返回值类型都是int
+       resultType就无需指定了
+       insert update delete 标签中没有resultType
+       但是仍然可以有paramaterType
+       -->
+    <!-- 增加方法
+    public int addEmp(Emp emp);
+    -->
+    <insert id="addEmp" parameterType="emp">
+        insert into emp values(#{empno},#{ename},#{job},#{mgr},#{hiredate},#{sal},#{comm},#{deptno})
+    </insert>
+    <!--修改
+    根据工号修改员工姓名
+    public int updateEmp(Emp emp);
+    -->
+    <update id="updateEmp" parameterType="emp">
+        update emp set ename = #{ename} where empno=#{empno}
+    </update>
+    <!-- 删除
+    删除大于给定工号的员工信息
+    public int deleteEmp(int empno)
+    -->
+    <delete id="deleteEmp" parameterType="int">
+        delete from emp where empno >= #{empno}
+    </delete>
+
+</mapper>
+
