@@ -64,6 +64,7 @@
         <include refid="Base_Column_List" />
         from ygg_mybatis_01
         where  id_yg = #{idYg,jdbcType=BIGINT}
+
     </select>
 
 
