@@ -1,0 +1,12 @@
+2023-11-28 10:29:42 DEBUG [main] c.msb.mapper.EmpMapperProxy.findByEname.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where ename like concat('%',?,'%') 
+2023-11-28 10:29:42 DEBUG [main] c.msb.mapper.EmpMapperProxy.findByEname.debug(BaseJdbcLogger.java:143) -- ==> Parameters: L(String)
+2023-11-28 10:29:42 DEBUG [main] c.msb.mapper.EmpMapperProxy.findByEname.debug(BaseJdbcLogger.java:143) -- <==      Total: 4
+2023-11-28 10:55:16 DEBUG [main] com.msb.mapper.EmpMapperProxy.insertEmp.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: insert into emp values(?,?,?,?,?,?,?,?) 
+2023-11-28 10:55:16 DEBUG [main] com.msb.mapper.EmpMapperProxy.insertEmp.debug(BaseJdbcLogger.java:143) -- ==> Parameters: null, TOM(String), SALESMAN(String), 7521(Integer), 2023-11-28 10:55:16.402(Timestamp), 2314.0(Double), 100.0(Double), 10(Integer)
+2023-11-28 10:55:16 DEBUG [main] com.msb.mapper.EmpMapperProxy.insertEmp.debug(BaseJdbcLogger.java:143) -- <==    Updates: 1
+2023-11-28 10:59:54 DEBUG [main] c.m.m.EmpMapperProxy.updateEnameByEmpno.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: update emp set ename =? where empno =? 
+2023-11-28 10:59:54 DEBUG [main] c.m.m.EmpMapperProxy.updateEnameByEmpno.debug(BaseJdbcLogger.java:143) -- ==> Parameters: TOM(String), 7941(Integer)
+2023-11-28 10:59:54 DEBUG [main] c.m.m.EmpMapperProxy.updateEnameByEmpno.debug(BaseJdbcLogger.java:143) -- <==    Updates: 1
+2023-11-28 11:00:10 DEBUG [main] c.m.mapper.EmpMapperProxy.deleteByEmpno.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: delete from emp where empno =? 
+2023-11-28 11:00:10 DEBUG [main] c.m.mapper.EmpMapperProxy.deleteByEmpno.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 7941(Integer)
+2023-11-28 11:00:10 DEBUG [main] c.m.mapper.EmpMapperProxy.deleteByEmpno.debug(BaseJdbcLogger.java:143) -- <==    Updates: 1

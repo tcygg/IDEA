@@ -1,0 +1,15 @@
+2023-12-01 09:35:25 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai2.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select EMPNO ,ENAME,JOB, MGR,HIREDATE,SAL, COMM,DEPTNO from emp where empno in ( ? , ? , ? ) 
+2023-12-01 09:35:25 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai2.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 7934(Integer), 7940(Integer), 7902(Integer)
+2023-12-01 09:35:25 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai2.debug(BaseJdbcLogger.java:143) -- <==      Total: 3
+2023-12-01 09:35:47 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai2.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select EMPNO ,ENAME,JOB, MGR,HIREDATE,SAL, COMM,DEPTNO from emp where empno in ( ? , ? , ? ) 
+2023-12-01 09:35:47 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai2.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 7934(Integer), 7940(Integer), 7902(Integer)
+2023-12-01 09:35:47 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai2.debug(BaseJdbcLogger.java:143) -- <==      Total: 3
+2023-12-01 14:13:31 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai33.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select EMPNO ,ENAME,JOB, MGR,HIREDATE,SAL, COMM,DEPTNO from emp where empno in ( ?,? , ?,? ) 
+2023-12-01 14:13:31 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai33.debug(BaseJdbcLogger.java:143) -- ==> Parameters: KING(String), 7839(Integer), JONES(String), 7566(Integer)
+2023-12-01 14:13:31 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai33.debug(BaseJdbcLogger.java:143) -- <==      Total: 2
+2023-12-01 14:15:04 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai33.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select EMPNO ,ENAME,JOB, MGR,HIREDATE,SAL, COMM,DEPTNO from emp where empno in ( ?,? , ?,? ) 
+2023-12-01 14:15:04 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai33.debug(BaseJdbcLogger.java:143) -- ==> Parameters: KING(String), 7839(Integer), JONES(String), 7566(Integer)
+2023-12-01 14:15:04 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai33.debug(BaseJdbcLogger.java:143) -- <==      Total: 2
+2023-12-01 14:16:19 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai33.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select EMPNO ,ENAME,JOB, MGR,HIREDATE,SAL, COMM,DEPTNO from emp where empno in ( ?,? , ?,? ) 
+2023-12-01 14:16:19 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai33.debug(BaseJdbcLogger.java:143) -- ==> Parameters: KING(String), 7839(Integer), JONES(String), 7782(Integer)
+2023-12-01 14:16:19 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai33.debug(BaseJdbcLogger.java:143) -- <==      Total: 2

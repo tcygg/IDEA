@@ -1,0 +1,24 @@
+2023-11-25 09:11:23 DEBUG [main] com.msb.mapper.EmpMapperProxy.findAllEmp.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp
+2023-11-25 09:11:23 DEBUG [main] com.msb.mapper.EmpMapperProxy.findAllEmp.debug(BaseJdbcLogger.java:143) -- ==> Parameters:
+2023-11-25 09:11:23 DEBUG [main] com.msb.mapper.EmpMapperProxy.findAllEmp.debug(BaseJdbcLogger.java:143) -- <==      Total: 14
+2023-11-25 11:07:37 DEBUG [main] com.msb.mapper.EmpMapperProxy.findOne.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where empno = 7566 
+2023-11-25 11:07:37 DEBUG [main] com.msb.mapper.EmpMapperProxy.findOne.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-25 11:07:37 DEBUG [main] com.msb.mapper.EmpMapperProxy.findOne.debug(BaseJdbcLogger.java:143) -- <==      Total: 1
+2023-11-25 11:17:45 DEBUG [main] com.msb.mapper.EmpMapperCeshi.findEmpMap.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp 
+2023-11-25 11:17:45 DEBUG [main] com.msb.mapper.EmpMapperCeshi.findEmpMap.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-25 11:17:45 DEBUG [main] com.msb.mapper.EmpMapperCeshi.findEmpMap.debug(BaseJdbcLogger.java:143) -- <==      Total: 14
+2023-11-25 11:18:39 DEBUG [main] com.msb.mapper.EmpMapperProxy.findEmpMap.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp 
+2023-11-25 11:18:39 DEBUG [main] com.msb.mapper.EmpMapperProxy.findEmpMap.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-25 11:18:39 DEBUG [main] com.msb.mapper.EmpMapperProxy.findEmpMap.debug(BaseJdbcLogger.java:143) -- <==      Total: 14
+2023-11-25 11:19:12 DEBUG [main] com.msb.mapper.EmpMapperProxy.findEmpMap.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp 
+2023-11-25 11:19:12 DEBUG [main] com.msb.mapper.EmpMapperProxy.findEmpMap.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-25 11:19:12 DEBUG [main] com.msb.mapper.EmpMapperProxy.findEmpMap.debug(BaseJdbcLogger.java:143) -- <==      Total: 14
+2023-11-25 11:31:05 DEBUG [main] c.m.m.EmpMapperCeshi.findAllEmpTable.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp 
+2023-11-25 11:31:06 DEBUG [main] c.m.m.EmpMapperCeshi.findAllEmpTable.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-25 11:31:06 DEBUG [main] c.m.m.EmpMapperCeshi.findAllEmpTable.debug(BaseJdbcLogger.java:143) -- <==      Total: 14
+2023-11-25 11:32:38 DEBUG [main] c.m.m.EmpMapperCeshi.findAllEmpTable.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp 
+2023-11-25 11:32:38 DEBUG [main] c.m.m.EmpMapperCeshi.findAllEmpTable.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-25 11:32:38 DEBUG [main] c.m.m.EmpMapperCeshi.findAllEmpTable.debug(BaseJdbcLogger.java:143) -- <==      Total: 14
+2023-11-25 16:00:02 DEBUG [main] com.msb.mapper.EmpMapperProxy.findAllEmp.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp 
+2023-11-25 16:00:03 DEBUG [main] com.msb.mapper.EmpMapperProxy.findAllEmp.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-25 16:00:03 DEBUG [main] com.msb.mapper.EmpMapperProxy.findAllEmp.debug(BaseJdbcLogger.java:143) -- <==      Total: 14

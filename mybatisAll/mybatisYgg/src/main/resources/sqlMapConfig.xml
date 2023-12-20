@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--究极无敌详细mybatis配置文件,xml-->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--    下面就是读取数据库配置文件的路径地址,可选择不同配置文件(其实就是写的变量,方便这个文件去使用一些数据库的变量)-->
+    <properties resource="jdbc.properties"></properties>
+    <settings>
+        <!--  settings  是配置 MyBatis 运行时的一些行为的，例如缓存、延迟加载、命名规则等一系列控制性参数。-->
+        <!--        <setting name="logImpl" value="LOG4J2"/>-->
+        <setting name="logImpl" value="SLF4J"/>
+    </settings>
+<!--    就是把我建的实体类pojo下面的,比如库名MYtable起个小写别名,方便使用-->
+    <typeAliases>
+        <!--
+        <typeAliases> 可以为配置文件中的 Java 类设置别名，
+        MyBatis 对常用类有默认别名支持，别名可以减少全限定类名的冗余
+        通过包扫描给所有的实体类起别名,给指定报名下的所有类起别名
+        默认每个实体类的别名是首字母小写的类名
+        Dept   dept
+        Emp    emp
+        单个就这么写,但是以后多了就不行,按下面写的方式
+        <typeAlias type="com.msb.pojo.Dept" alias="dept"></typeAlias>
+
+        -->
+        <!--        下面就是按这个包,直接默认起别名,就是默认短路径,名称首字母小写-->
+        <package name="com.msb.pojo"/>
+    </typeAliases>
+
+<!--    就是多个环境都要使用的时候,都写在这里,环境s的default就是多个环境时,默认使用哪个-->
+    <environments default="development">
+        <environment id="development">
+            <!--事务控制方式,这里是原生jdbc-->
+            <transactionManager type="JDBC"/>
+<!--        <dataSource>    就是配置一个数据源链接等相关信息，type属性是用来配置数据库连接方式的，mybatis也提供了一下几种方式：
+            - UNPOOLED 非连接池数据库
+            - POOLED 连接池数据库
+            - JNDI JNDI数据源
+            - 自定义数据源-->
+            <dataSource type="POOLED">
+                <!--                本地的数据库用这个连接-->
+                <property name="driver" value="${jdbc_driver}"/>
+                <property name="url" value="${jdbc_url}"/>
+                <property name="username" value="${jdbc_username}"/>
+                <property name="password" value="${jdbc_password}"/>
+            </dataSource>
+        </environment>
+        <environment id="xiaomi_mysql">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!--公司的数据库用这个连接-->
+                <property name="driver" value="${jdbc_driver}"/>
+                <property name="url" value="${bi_url}"/>
+                <property name="username" value="${bi_username}"/>
+                <property name="password" value="${bi_password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--    加载mapper映射文件-->
+    <mappers>
+<!--    <mappers> 用于注册映射文件或持久层接口，只有注册的映射文件才能使用，一般有以下四种方式可以完成注册：
+        （1）使用相对路径注册映射文件
+            <mapper resource="com/msb/mapper/EmpMapperCeshi.xml"/>
+        （2）使用绝对路径注册映射文件
+            <mapper url="file:///D:idea_workspace/exercise/com/it/mapper/StudentMapper.xml"/>
+        （3）注册持久层接口（较常用）
+            <mapper class="com.it.mapper.StudentMapper"/>
+        （4）注册一个包下的所有持久层接口
+            <package name="com.it.mapper"/>-->
+        <package name="com.msb.mapper"/>
+    </mappers>
+</configuration>

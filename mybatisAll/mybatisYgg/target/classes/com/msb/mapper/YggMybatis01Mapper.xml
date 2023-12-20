@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.msb.mapper.YggMybatis01Mapper">
+
+    <resultMap id="BaseResultMap" type="com.msb.pojo.YggMybatis01">
+            <id property="idYg" column="id_yg" jdbcType="BIGINT"/>
+            <result property="orderNoYg" column="order_no_yg" jdbcType="VARCHAR"/>
+            <result property="orderTypeYg" column="order_type_yg" jdbcType="VARCHAR"/>
+            <result property="orderPlanAllnum" column="order_plan_allnum" jdbcType="BIGINT"/>
+            <result property="orderPlanNownum" column="order_plan_nownum" jdbcType="BIGINT"/>
+            <result property="orderOverNownum" column="order_over_nownum" jdbcType="BIGINT"/>
+            <result property="chaenum" column="chaenum" jdbcType="BIGINT"/>
+            <result property="chaenumNow" column="chaenum_now" jdbcType="BIGINT"/>
+            <result property="orderDelayNownum" column="order_delay_nownum" jdbcType="BIGINT"/>
+            <result property="orderOverRate" column="order_over_rate" jdbcType="DOUBLE"/>
+            <result property="orderDelayRate" column="order_delay_rate" jdbcType="DOUBLE"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="expectArrivalTime" column="expect_arrival_time" jdbcType="TIMESTAMP"/>
+            <result property="orderUpdatePerson" column="order_update_person" jdbcType="INTEGER"/>
+            <result property="warehouse" column="warehouse" jdbcType="VARCHAR"/>
+            <result property="orderState" column="order_state" jdbcType="VARCHAR"/>
+            <result property="address" column="address" jdbcType="VARCHAR"/>
+            <result property="factory" column="factory" jdbcType="VARCHAR"/>
+            <result property="productionLine" column="production_line" jdbcType="VARCHAR"/>
+            <result property="workstation" column="workstation" jdbcType="VARCHAR"/>
+            <result property="robotState" column="robot_state" jdbcType="VARCHAR"/>
+            <result property="remarkYg" column="remark_yg" jdbcType="VARCHAR"/>
+            <result property="remark2Yg" column="remark2_yg" jdbcType="VARCHAR"/>
+            <result property="dateTime" column="date_time" jdbcType="DATE"/>
+            <result property="jpgYg" column="jpg_yg" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id_yg,order_no_yg,order_type_yg,
+        order_plan_allnum,order_plan_nownum,order_over_nownum,
+        chaenum,chaenum_now,order_delay_nownum,
+        order_over_rate,order_delay_rate,create_time,
+        update_time,expect_arrival_time,order_update_person,
+        warehouse,order_state,address,
+        factory,production_line,workstation,
+        robot_state,remark_yg,remark2_yg,
+        date_time,jpg_yg
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from ygg_mybatis_01
+        where  id_yg = #{idYg,jdbcType=BIGINT}
+    </select>
+
+    <select id="selectByPrimaryKeyAll" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from ygg_mybatis_01
+        where  id_yg > #{idYg,jdbcType=BIGINT}
+    </select>
+
+    <select id="selectByPrimaryKeyDX" parameterType="java.lang.Long" resultType="yggMybatis01">
+        select
+        <include refid="Base_Column_List" />
+        from ygg_mybatis_01
+        where  id_yg = #{idYg,jdbcType=BIGINT}
+    </select>
+
+
+
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete from ygg_mybatis_01
+        where  id_yg > #{idYg,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" keyColumn="id_yg" keyProperty="idYg" parameterType="com.msb.pojo.YggMybatis01" useGeneratedKeys="true">
+        insert into ygg_mybatis_01
+        ( id_yg,order_no_yg,order_type_yg
+        ,order_plan_allnum,order_plan_nownum,order_over_nownum
+        ,chaenum,chaenum_now,order_delay_nownum
+        ,order_over_rate,order_delay_rate,create_time
+        ,update_time,expect_arrival_time,order_update_person
+        ,warehouse,order_state,address
+        ,factory,production_line,workstation
+        ,robot_state,remark_yg,remark2_yg
+        ,date_time,jpg_yg)
+        values (#{idYg,jdbcType=BIGINT},#{orderNoYg,jdbcType=VARCHAR},#{orderTypeYg,jdbcType=VARCHAR}
+        ,#{orderPlanAllnum,jdbcType=BIGINT},#{orderPlanNownum,jdbcType=BIGINT},#{orderOverNownum,jdbcType=BIGINT}
+        ,#{chaenum,jdbcType=BIGINT},#{chaenumNow,jdbcType=BIGINT},#{orderDelayNownum,jdbcType=BIGINT}
+        ,#{orderOverRate,jdbcType=DOUBLE},#{orderDelayRate,jdbcType=DOUBLE},#{createTime,jdbcType=TIMESTAMP}
+        ,#{updateTime,jdbcType=TIMESTAMP},#{expectArrivalTime,jdbcType=TIMESTAMP},#{orderUpdatePerson,jdbcType=INTEGER}
+        ,#{warehouse,jdbcType=VARCHAR},#{orderState,jdbcType=VARCHAR},#{address,jdbcType=VARCHAR}
+        ,#{factory,jdbcType=VARCHAR},#{productionLine,jdbcType=VARCHAR},#{workstation,jdbcType=VARCHAR}
+        ,#{robotState,jdbcType=VARCHAR},#{remarkYg,jdbcType=VARCHAR},#{remark2Yg,jdbcType=VARCHAR}
+        ,#{dateTime,jdbcType=DATE},#{jpgYg,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" keyColumn="id_yg" keyProperty="idYg" parameterType="com.msb.pojo.YggMybatis01" useGeneratedKeys="true">
+        insert into ygg_mybatis_01
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                <if test="idYg != null">id_yg,</if>
+                <if test="orderNoYg != null">order_no_yg,</if>
+                <if test="orderTypeYg != null">order_type_yg,</if>
+                <if test="orderPlanAllnum != null">order_plan_allnum,</if>
+                <if test="orderPlanNownum != null">order_plan_nownum,</if>
+                <if test="orderOverNownum != null">order_over_nownum,</if>
+                <if test="chaenum != null">chaenum,</if>
+                <if test="chaenumNow != null">chaenum_now,</if>
+                <if test="orderDelayNownum != null">order_delay_nownum,</if>
+                <if test="orderOverRate != null">order_over_rate,</if>
+                <if test="orderDelayRate != null">order_delay_rate,</if>
+                <if test="createTime != null">create_time,</if>
+                <if test="updateTime != null">update_time,</if>
+                <if test="expectArrivalTime != null">expect_arrival_time,</if>
+                <if test="orderUpdatePerson != null">order_update_person,</if>
+                <if test="warehouse != null">warehouse,</if>
+                <if test="orderState != null">order_state,</if>
+                <if test="address != null">address,</if>
+                <if test="factory != null">factory,</if>
+                <if test="productionLine != null">production_line,</if>
+                <if test="workstation != null">workstation,</if>
+                <if test="robotState != null">robot_state,</if>
+                <if test="remarkYg != null">remark_yg,</if>
+                <if test="remark2Yg != null">remark2_yg,</if>
+                <if test="dateTime != null">date_time,</if>
+                <if test="jpgYg != null">jpg_yg,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+                <if test="idYg != null">#{idYg,jdbcType=BIGINT},</if>
+                <if test="orderNoYg != null">#{orderNoYg,jdbcType=VARCHAR},</if>
+                <if test="orderTypeYg != null">#{orderTypeYg,jdbcType=VARCHAR},</if>
+                <if test="orderPlanAllnum != null">#{orderPlanAllnum,jdbcType=BIGINT},</if>
+                <if test="orderPlanNownum != null">#{orderPlanNownum,jdbcType=BIGINT},</if>
+                <if test="orderOverNownum != null">#{orderOverNownum,jdbcType=BIGINT},</if>
+                <if test="chaenum != null">#{chaenum,jdbcType=BIGINT},</if>
+                <if test="chaenumNow != null">#{chaenumNow,jdbcType=BIGINT},</if>
+                <if test="orderDelayNownum != null">#{orderDelayNownum,jdbcType=BIGINT},</if>
+                <if test="orderOverRate != null">#{orderOverRate,jdbcType=DOUBLE},</if>
+                <if test="orderDelayRate != null">#{orderDelayRate,jdbcType=DOUBLE},</if>
+                <if test="createTime != null">#{createTime,jdbcType=TIMESTAMP},</if>
+                <if test="updateTime != null">#{updateTime,jdbcType=TIMESTAMP},</if>
+                <if test="expectArrivalTime != null">#{expectArrivalTime,jdbcType=TIMESTAMP},</if>
+                <if test="orderUpdatePerson != null">#{orderUpdatePerson,jdbcType=INTEGER},</if>
+                <if test="warehouse != null">#{warehouse,jdbcType=VARCHAR},</if>
+                <if test="orderState != null">#{orderState,jdbcType=VARCHAR},</if>
+                <if test="address != null">#{address,jdbcType=VARCHAR},</if>
+                <if test="factory != null">#{factory,jdbcType=VARCHAR},</if>
+                <if test="productionLine != null">#{productionLine,jdbcType=VARCHAR},</if>
+                <if test="workstation != null">#{workstation,jdbcType=VARCHAR},</if>
+                <if test="robotState != null">#{robotState,jdbcType=VARCHAR},</if>
+                <if test="remarkYg != null">#{remarkYg,jdbcType=VARCHAR},</if>
+                <if test="remark2Yg != null">#{remark2Yg,jdbcType=VARCHAR},</if>
+                <if test="dateTime != null">#{dateTime,jdbcType=DATE},</if>
+                <if test="jpgYg != null">#{jpgYg,jdbcType=VARCHAR},</if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.msb.pojo.YggMybatis01">
+        update ygg_mybatis_01
+        <set>
+                <if test="orderNoYg != null">
+                    order_no_yg = #{orderNoYg,jdbcType=VARCHAR},
+                </if>
+                <if test="orderTypeYg != null">
+                    order_type_yg = #{orderTypeYg,jdbcType=VARCHAR},
+                </if>
+                <if test="orderPlanAllnum != null">
+                    order_plan_allnum = #{orderPlanAllnum,jdbcType=BIGINT},
+                </if>
+                <if test="orderPlanNownum != null">
+                    order_plan_nownum = #{orderPlanNownum,jdbcType=BIGINT},
+                </if>
+                <if test="orderOverNownum != null">
+                    order_over_nownum = #{orderOverNownum,jdbcType=BIGINT},
+                </if>
+                <if test="chaenum != null">
+                    chaenum = #{chaenum,jdbcType=BIGINT},
+                </if>
+                <if test="chaenumNow != null">
+                    chaenum_now = #{chaenumNow,jdbcType=BIGINT},
+                </if>
+                <if test="orderDelayNownum != null">
+                    order_delay_nownum = #{orderDelayNownum,jdbcType=BIGINT},
+                </if>
+                <if test="orderOverRate != null">
+                    order_over_rate = #{orderOverRate,jdbcType=DOUBLE},
+                </if>
+                <if test="orderDelayRate != null">
+                    order_delay_rate = #{orderDelayRate,jdbcType=DOUBLE},
+                </if>
+                <if test="createTime != null">
+                    create_time = #{createTime,jdbcType=TIMESTAMP},
+                </if>
+                <if test="updateTime != null">
+                    update_time = #{updateTime,jdbcType=TIMESTAMP},
+                </if>
+                <if test="expectArrivalTime != null">
+                    expect_arrival_time = #{expectArrivalTime,jdbcType=TIMESTAMP},
+                </if>
+                <if test="orderUpdatePerson != null">
+                    order_update_person = #{orderUpdatePerson,jdbcType=INTEGER},
+                </if>
+                <if test="warehouse != null">
+                    warehouse = #{warehouse,jdbcType=VARCHAR},
+                </if>
+                <if test="orderState != null">
+                    order_state = #{orderState,jdbcType=VARCHAR},
+                </if>
+                <if test="address != null">
+                    address = #{address,jdbcType=VARCHAR},
+                </if>
+                <if test="factory != null">
+                    factory = #{factory,jdbcType=VARCHAR},
+                </if>
+                <if test="productionLine != null">
+                    production_line = #{productionLine,jdbcType=VARCHAR},
+                </if>
+                <if test="workstation != null">
+                    workstation = #{workstation,jdbcType=VARCHAR},
+                </if>
+                <if test="robotState != null">
+                    robot_state = #{robotState,jdbcType=VARCHAR},
+                </if>
+                <if test="remarkYg != null">
+                    remark_yg = #{remarkYg,jdbcType=VARCHAR},
+                </if>
+                <if test="remark2Yg != null">
+                    remark2_yg = #{remark2Yg,jdbcType=VARCHAR},
+                </if>
+                <if test="dateTime != null">
+                    date_time = #{dateTime,jdbcType=DATE},
+                </if>
+                <if test="jpgYg != null">
+                    jpg_yg = #{jpgYg,jdbcType=VARCHAR},
+                </if>
+        </set>
+        where   id_yg = #{idYg,jdbcType=BIGINT} 
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.msb.pojo.YggMybatis01">
+        update ygg_mybatis_01
+        set 
+            order_no_yg =  #{orderNoYg,jdbcType=VARCHAR},
+            order_type_yg =  #{orderTypeYg,jdbcType=VARCHAR},
+            order_plan_allnum =  #{orderPlanAllnum,jdbcType=BIGINT},
+            order_plan_nownum =  #{orderPlanNownum,jdbcType=BIGINT},
+            order_over_nownum =  #{orderOverNownum,jdbcType=BIGINT},
+            chaenum =  #{chaenum,jdbcType=BIGINT},
+            chaenum_now =  #{chaenumNow,jdbcType=BIGINT},
+            order_delay_nownum =  #{orderDelayNownum,jdbcType=BIGINT},
+            order_over_rate =  #{orderOverRate,jdbcType=DOUBLE},
+            order_delay_rate =  #{orderDelayRate,jdbcType=DOUBLE},
+            create_time =  #{createTime,jdbcType=TIMESTAMP},
+            update_time =  #{updateTime,jdbcType=TIMESTAMP},
+            expect_arrival_time =  #{expectArrivalTime,jdbcType=TIMESTAMP},
+            order_update_person =  #{orderUpdatePerson,jdbcType=INTEGER},
+            warehouse =  #{warehouse,jdbcType=VARCHAR},
+            order_state =  #{orderState,jdbcType=VARCHAR},
+            address =  #{address,jdbcType=VARCHAR},
+            factory =  #{factory,jdbcType=VARCHAR},
+            production_line =  #{productionLine,jdbcType=VARCHAR},
+            workstation =  #{workstation,jdbcType=VARCHAR},
+            robot_state =  #{robotState,jdbcType=VARCHAR},
+            remark_yg =  #{remarkYg,jdbcType=VARCHAR},
+            remark2_yg =  #{remark2Yg,jdbcType=VARCHAR},
+            date_time =  #{dateTime,jdbcType=DATE},
+            jpg_yg =  #{jpgYg,jdbcType=VARCHAR}
+        where   id_yg = #{idYg,jdbcType=BIGINT} 
+    </update>
+</mapper>

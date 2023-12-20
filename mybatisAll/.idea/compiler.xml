@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="mybatisDemo1" />
         <module name="mybatisBiDemo" />
+        <module name="mybatisYgg" />
       </profile>
     </annotationProcessing>
   </component>

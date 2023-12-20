@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.msb.mapper.YggEmpMapperIf">
+    <!--
+    返回单个对象
+    public Emp findOne();
+    id 相当于方法名
+    resultType 相当于返回值类型
+        sql语句的查询结果用哪个类来进行封装 如果返回值类型是集合,这里写的也是集合中的元素对应的类,不是集合本身作为类型
+    paramaterType 参数类型
+    SQL语句就是具体的方法体的实现
+    -->
+
+    <resultMap id="BaseResultMap" type="com.msb.pojo.Emp">
+        <id property="empno" column="EMPNO" jdbcType="INTEGER"/>
+        <result property="ename" column="ENAME" jdbcType="VARCHAR"/>
+        <result property="job" column="JOB" jdbcType="VARCHAR"/>
+        <result property="mgr" column="MGR" jdbcType="INTEGER"/>
+        <result property="hiredate" column="HIREDATE" jdbcType="DATE"/>
+        <result property="sal" column="SAL" jdbcType="DOUBLE"/>
+        <result property="comm" column="COMM" jdbcType="DOUBLE"/>
+        <result property="deptno" column="DEPTNO" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        EMPNO
+        ,ENAME,JOB,
+        MGR,HIREDATE,SAL,
+        COMM,DEPTNO
+    </sql>
+    <sql id="baseSelect">
+        select <include refid="Base_Column_List"></include> from emp
+    </sql>
+
+    <select id="findByCondition" resultType="emp">
+        select * from emp where 1=1
+        <if test="empno != null">
+            and empno =#{empno}
+        </if>
+        <!--<if test="ename != null and ename != ''">
+            and ename like concat('%',#{ename},'%')
+        </if>-->
+        <if test="ename != null and ename != ''">
+            <bind name="likePattern" value="'%'+ename+'%'"/>
+            and ename like #{likePattern}
+        </if>
+        <if test="job != null and job != ''">
+            and job =#{job}
+        </if>
+        <if test="mgr != null">
+            and mgr =#{mgr}
+        </if>
+        <if test="hiredate != null">
+            and hiredate =#{hiredate}
+        </if>
+        <if test="sal != null">
+            and sal =#{sal}
+        </if>
+        <if test="comm != null">
+            and comm =#{comm}
+        </if>
+        <if test="deptno != null">
+            and deptno =#{deptno}
+        </if>
+    </select>
+
+    <select id="findByCondition2" resultType="emp">
+        <include refid="baseSelect"></include>
+        <where>
+            <choose>
+                <when test="empno != null">
+                    and empno= #{empno}
+                </when>
+                <when test="ename != null and ename != ''">
+                    and ename= #{ename}
+                </when>
+                <when test="job != null and job != ''">
+                    and job= #{job}
+                </when>
+                <when test="mgr != null ">
+                    and mgr= #{mgr}
+                </when>
+                <when test="hiredate != null ">
+                    and hiredate= #{hiredate}
+                </when>
+                <when test="sal != null">
+                    and sal= #{sal}
+                </when>
+                <when test="comm != null ">
+                    and comm =#{comm}
+                </when>
+                <when test="deptno != null ">
+                    and deptno= #{deptno}
+                </when>
+            </choose>
+        </where>
+    </select>
+
+    <!--int updateEmpByCondtion(Emp emp);-->
+    <update id="updateEmpByCondtion">
+        update emp
+        <set>
+            <if test="ename != null and ename != '' ">
+                , ename =#{ename}
+            </if>
+            <if test="job != null and ename != '' ">
+                , job =#{job}
+            </if>
+            <if test="mgr != null ">
+                , mgr =#{mgr}
+            </if>
+            <if test="hiredate != null ">
+                , hiredate =#{hiredate}
+            </if>
+            <if test="sal != null ">
+                , sal =#{sal}
+            </if>
+            <if test="comm != null ">
+                , comm =#{comm}
+            </if>
+            <if test="deptno != null ">
+                , deptno =#{deptno}
+            </if>
+        </set>
+        where empno =#{empno}
+    </update>
+
+    <select id="findEmpDongTai1" resultType="emp">
+        <!--List<Emp> findByEmpnos1(int[] empnos);
+         collection=""  遍历的集合或者是数组
+                         参数是数组,collection中名字指定为array
+                         参数是List集合,collection中名字指定为list
+         separator=""   多个元素取出的时候 用什么文字分隔
+         open=""        以什么开头
+         close=""       以什么结尾
+         item=""        中间变量名
+         for(Person per:PersonList)
+         -->
+        select <include refid="Base_Column_List"></include> from emp where empno in
+        <foreach collection="array" separator="," open="(" close=")" item="empnoyg">
+            #{empnoyg}
+        </foreach>
+
+
+    </select>
+    <select id="findEmpDongTai2" resultType="emp">
+        <!--List<Emp> findByEmpnos1(int[] empnos);
+         collection=""  遍历的集合或者是数组
+                         参数是数组,collection中名字指定为array
+                         参数是List集合,collection中名字指定为list
+         separator=""   多个元素取出的时候 用什么文字分隔
+         open=""        以什么开头
+         close=""       以什么结尾
+         item=""        中间变量名
+         for(Person per:PersonList)
+         -->
+        select <include refid="Base_Column_List"></include> from emp where empno in
+        <foreach collection="list" separator="," open="(" close=")" item="empnoyg">
+            #{empnoyg}
+        </foreach>
+
+
+    </select>
+
+
+    <insert id="batchInsert" parameterType="list" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO fs_asn_order_item(asn_id, source_line_no, state, batch_no,batch_ext,batch_info, item_id,
+        material_origin_no,
+        producer_name, supplier_name, expect_quantity, expect_unit
+        ,received_area,callback_quantity, factory_id, warehouse_id,create_person, update_person, create_time, update_time,received_quantity,version,
+        po_order_no,po_line_no
+        )
+        VALUES
+        <foreach collection="list" item="item" separator=",">
+            (#{item.asnId}, #{item.sourceLineNo}, #{item.state}, #{item.batchNo}, #{item.batchExt}, #{item.batchInfo},
+            #{item.itemId}, #{item.materialOriginNo},
+            #{item.producerName}, #{item.supplierName},
+            #{item.expectQuantity},#{item.expectUnit},
+            #{item.receivedArea},#{item.callbackQuantity},#{item.factoryId}, #{item.warehouseId},
+            #{item.createPerson},#{item.updatePerson}, #{item.createTime}, #{item.updateTime},#{item.receivedQuantity},#{item.version},
+            #{item.poOrderNo},#{item.poLineNo}
+            )
+        </foreach>
+    </insert>
+
+    <update id="batchUpdateState">
+        update fs_asn_order_item set state = #{state},
+        <if test="isUpdateNum == 1">
+            received_quantity=expect_quantity,
+        </if>
+        update_person = #{updatePerson}, update_time = SYSDATE() where id
+        in
+        <foreach collection="ids" item="item" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </update>
+
+
+</mapper>

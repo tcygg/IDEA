@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.msb.mapper.DeptMapperId">
+    <!--
+    返回单个对象
+    public Emp findOne();
+    id 相当于方法名
+    resultType 相当于返回值类型
+        sql语句的查询结果用哪个类来进行封装 如果返回值类型是集合,这里写的也是集合中的元素对应的类,不是集合本身作为类型
+    paramaterType 参数类型
+    SQL语句就是具体的方法体的实现
+    -->
+
+    <resultMap id="BaseResultMap" type="com.msb.pojo.Emp">
+        <id property="empno" column="EMPNO" jdbcType="INTEGER"/>
+        <result property="ename" column="ENAME" jdbcType="VARCHAR"/>
+        <result property="job" column="JOB" jdbcType="VARCHAR"/>
+        <result property="mgr" column="MGR" jdbcType="INTEGER"/>
+        <result property="hiredate" column="HIREDATE" jdbcType="DATE"/>
+        <result property="sal" column="SAL" jdbcType="DOUBLE"/>
+        <result property="comm" column="COMM" jdbcType="DOUBLE"/>
+        <result property="deptno" column="DEPTNO" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        EMPNO
+        ,ENAME,JOB,
+        MGR,HIREDATE,SAL,
+        COMM,DEPTNO
+    </sql>
+    <select id="findAllEmp11" resultType="emp">
+        select *
+        from emp
+    </select>
+
+    <!-- int addDept(Dept dept);
+    useGeneratedKeys="true" 返回数据库帮我们生成的主键
+    keyProperty="deptno" 生成的主键值用我们dept对象那个属性存储
+    -->
+    <insert id="insertDeptId" useGeneratedKeys="true" keyProperty="deptno">
+
+        insert into dept values (DEFAULT,#{dname},#{loc})
+
+    </insert>
+
+
+
+</mapper>
+
+
+        <!--
+        <mapper namespace="bbb">
+        &lt;!&ndash;public List<Dept> findAll(){    }&ndash;&gt;
+        <select id="findAllEmp" resultType="emp" >
+            select * from emp
+        </select>
+        </mapper>-->

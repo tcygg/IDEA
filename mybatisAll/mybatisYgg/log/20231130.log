@@ -1,0 +1,66 @@
+2023-11-30 17:15:46 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where 1=1 and ename like concat('%',?,'%') 
+2023-11-30 17:15:46 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==> Parameters: L(String)
+2023-11-30 17:15:47 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- <==      Total: 4
+2023-11-30 17:17:36 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where 1=1 and empno =? and ename like concat('%',?,'%') 
+2023-11-30 17:17:36 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 7934(Integer), L(String)
+2023-11-30 17:17:36 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- <==      Total: 1
+2023-11-30 17:30:28 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where 1=1 and hiredate =? 
+2023-11-30 17:30:28 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 1981-02-22 00:00:00.0(Timestamp)
+2023-11-30 17:30:29 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- <==      Total: 1
+2023-11-30 17:56:26 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where 1=1 and hiredate =? 
+2023-11-30 17:56:26 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 1981-04-02 00:00:00.0(Timestamp)
+2023-11-30 17:56:26 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- <==      Total: 1
+2023-11-30 17:56:44 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where 1=1 and hiredate =? 
+2023-11-30 17:56:45 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 1981-04-02 00:00:00.0(Timestamp)
+2023-11-30 17:56:45 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- <==      Total: 1
+2023-11-30 17:57:40 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where 1=1 and hiredate =? 
+2023-11-30 17:57:40 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 2023-11-17 00:00:00.0(Timestamp)
+2023-11-30 17:57:40 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- <==      Total: 0
+2023-11-30 17:58:24 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where 1=1 and hiredate =? 
+2023-11-30 17:58:24 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 1981-04-02 00:00:00.0(Timestamp)
+2023-11-30 17:58:24 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- <==      Total: 1
+2023-11-30 17:59:57 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where 1=1 and hiredate =? 
+2023-11-30 17:59:57 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 1981-04-02 10:00:00.0(Timestamp)
+2023-11-30 17:59:57 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- <==      Total: 0
+2023-11-30 18:10:02 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where 1=1 and hiredate =? 
+2023-11-30 18:10:02 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 1981-04-02 10:00:00.0(Timestamp)
+2023-11-30 18:10:02 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- <==      Total: 0
+2023-11-30 18:10:20 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where 1=1 and hiredate =? 
+2023-11-30 18:10:20 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 1981-04-02 00:00:00.0(Timestamp)
+2023-11-30 18:10:20 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- <==      Total: 1
+2023-11-30 18:50:12 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition2.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp WHERE hiredate= ? 
+2023-11-30 18:50:12 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition2.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 1981-04-02 00:00:00.0(Timestamp)
+2023-11-30 18:50:12 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition2.debug(BaseJdbcLogger.java:143) -- <==      Total: 1
+2023-11-30 18:56:51 DEBUG [main] c.m.m.YggEmpMapperIf.updateEmpByCondtion.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: update emp SET ename =? where empno =? 
+2023-11-30 18:56:51 DEBUG [main] c.m.m.YggEmpMapperIf.updateEmpByCondtion.debug(BaseJdbcLogger.java:143) -- ==> Parameters: L(String), 7940(Integer)
+2023-11-30 18:56:51 DEBUG [main] c.m.m.YggEmpMapperIf.updateEmpByCondtion.debug(BaseJdbcLogger.java:143) -- <==    Updates: 1
+2023-11-30 19:11:17 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where 1=1 and ename like ? 
+2023-11-30 19:11:17 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==> Parameters: %L%(String)
+2023-11-30 19:11:17 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- <==      Total: 5
+2023-11-30 19:12:17 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where 1=1 and ename like ? and hiredate =? 
+2023-11-30 19:12:17 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==> Parameters: %L%(String), 1981-05-01 10:00:00.0(Timestamp)
+2023-11-30 19:12:17 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- <==      Total: 0
+2023-11-30 19:12:33 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where 1=1 and ename like ? and hiredate =? 
+2023-11-30 19:12:33 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- ==> Parameters: %L%(String), 1981-05-01 00:00:00.0(Timestamp)
+2023-11-30 19:12:33 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition.debug(BaseJdbcLogger.java:143) -- <==      Total: 1
+2023-11-30 19:19:57 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition2.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select EMPNO ,ENAME,JOB, MGR,HIREDATE,SAL, COMM,DEPTNO from emp WHERE hiredate= ? 
+2023-11-30 19:19:57 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition2.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 1981-04-02 00:00:00.0(Timestamp)
+2023-11-30 19:19:57 DEBUG [main] c.m.m.YggEmpMapperIf.findByCondition2.debug(BaseJdbcLogger.java:143) -- <==      Total: 1
+2023-11-30 19:41:03 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai1.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select EMPNO ,ENAME,JOB, MGR,HIREDATE,SAL, COMM,DEPTNO from emp where empno in ( ? , ? , ? ) 
+2023-11-30 19:41:03 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai1.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 7934(Integer), 7940(Integer), 7902(Integer)
+2023-11-30 19:41:03 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai1.debug(BaseJdbcLogger.java:143) -- <==      Total: 3
+2023-11-30 19:44:18 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai1.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select EMPNO ,ENAME,JOB, MGR,HIREDATE,SAL, COMM,DEPTNO from emp where empno in ( ? , ? , ? ) 
+2023-11-30 19:44:18 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai1.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 7934(Integer), 7940(Integer), 7902(Integer)
+2023-11-30 19:44:18 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai1.debug(BaseJdbcLogger.java:143) -- <==      Total: 3
+2023-11-30 19:45:35 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai1.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select EMPNO ,ENAME,JOB, MGR,HIREDATE,SAL, COMM,DEPTNO from emp where empno in ( ? , ? , ? ) 
+2023-11-30 19:45:35 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai1.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 7934(Integer), 7940(Integer), 7902(Integer)
+2023-11-30 19:45:35 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai1.debug(BaseJdbcLogger.java:143) -- <==      Total: 3
+2023-11-30 19:55:28 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai2.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select EMPNO ,ENAME,JOB, MGR,HIREDATE,SAL, COMM,DEPTNO from emp where empno in ( ? , ? , ? ) 
+2023-11-30 19:55:28 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai2.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 7934(Integer), 7940(Integer), 7902(Integer)
+2023-11-30 19:55:28 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai2.debug(BaseJdbcLogger.java:143) -- <==      Total: 3
+2023-11-30 21:28:44 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai2.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select EMPNO ,ENAME,JOB, MGR,HIREDATE,SAL, COMM,DEPTNO from emp where empno in ( ? , ? , ? ) 
+2023-11-30 21:28:44 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai2.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 7934(Integer), 7940(Integer), 7902(Integer)
+2023-11-30 21:28:44 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai2.debug(BaseJdbcLogger.java:143) -- <==      Total: 3
+2023-11-30 21:29:57 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai2.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select EMPNO ,ENAME,JOB, MGR,HIREDATE,SAL, COMM,DEPTNO from emp where empno in ( ? , ? , ? ) 
+2023-11-30 21:29:57 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai2.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 7934(Integer), 7940(Integer), 7902(Integer)
+2023-11-30 21:29:57 DEBUG [main] c.m.m.YggEmpMapperIf.findEmpDongTai2.debug(BaseJdbcLogger.java:143) -- <==      Total: 3

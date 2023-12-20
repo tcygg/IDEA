@@ -1,0 +1,72 @@
+2023-11-27 10:13:37 DEBUG [main] com.msb.mapper.EmpMapperProxy.findAllEmp.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp 
+2023-11-27 10:13:37 DEBUG [main] com.msb.mapper.EmpMapperProxy.findAllEmp.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-11-27 10:13:37 DEBUG [main] com.msb.mapper.EmpMapperProxy.findAllEmp.debug(BaseJdbcLogger.java:143) -- <==      Total: 14
+2023-11-27 10:32:12 DEBUG [main] c.msb.mapper.EmpMapperProxy.findByEmpno.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where empno =? 
+2023-11-27 10:32:12 DEBUG [main] c.msb.mapper.EmpMapperProxy.findByEmpno.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 7844(Integer)
+2023-11-27 10:32:12 DEBUG [main] c.msb.mapper.EmpMapperProxy.findByEmpno.debug(BaseJdbcLogger.java:143) -- <==      Total: 1
+2023-11-27 10:37:12 DEBUG [main] c.msb.mapper.EmpMapperProxy.findByEmpno.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where empno =? 
+2023-11-27 10:37:12 DEBUG [main] c.msb.mapper.EmpMapperProxy.findByEmpno.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 786644(Integer)
+2023-11-27 10:37:13 DEBUG [main] c.msb.mapper.EmpMapperProxy.findByEmpno.debug(BaseJdbcLogger.java:143) -- <==      Total: 0
+2023-11-27 10:58:36 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where deptno = ? and sal >= ? 
+2023-11-27 10:58:36 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 20(Integer), 3000.0(Double)
+2023-11-27 10:58:36 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal.debug(BaseJdbcLogger.java:143) -- <==      Total: 2
+2023-11-27 11:14:43 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal2.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where deptno =? and sal >= ? 
+2023-11-27 11:14:43 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal2.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 20(Integer), 3000(Integer)
+2023-11-27 11:14:43 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal2.debug(BaseJdbcLogger.java:143) -- <==      Total: 2
+2023-11-27 11:16:14 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal2.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where deptno =? and sal >= ? 
+2023-11-27 11:16:14 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal2.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 30(Integer), 3000(Integer)
+2023-11-27 11:16:14 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal2.debug(BaseJdbcLogger.java:143) -- <==      Total: 0
+2023-11-27 11:16:52 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal2.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where deptno =? and sal >= ? 
+2023-11-27 11:16:52 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal2.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 20(Integer), 3000(Integer)
+2023-11-27 11:16:52 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal2.debug(BaseJdbcLogger.java:143) -- <==      Total: 2
+2023-11-27 11:26:37 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal3.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where deptno =? and sal >= ? 
+2023-11-27 11:26:37 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal3.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 20(Integer), 3000.0(Double)
+2023-11-27 11:26:37 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal3.debug(BaseJdbcLogger.java:143) -- <==      Total: 2
+2023-11-27 14:44:05 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where deptno =? and sal >= ? 
+2023-11-27 14:44:05 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- ==> Parameters: null, null
+2023-11-27 14:44:05 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- <==      Total: 0
+2023-11-27 14:44:45 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where deptno =? and sal >= ? 
+2023-11-27 14:44:45 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- ==> Parameters: null, null
+2023-11-27 14:44:45 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- <==      Total: 0
+2023-11-27 14:46:09 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where deptno =? and sal >= ? 
+2023-11-27 14:46:09 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- ==> Parameters: null, null
+2023-11-27 14:46:09 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- <==      Total: 0
+2023-11-27 14:47:55 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where deptno =? and sal >= ? 
+2023-11-27 14:47:55 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 20(Integer), 3000.0(Double)
+2023-11-27 14:47:55 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- <==      Total: 2
+2023-11-27 14:50:59 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: -- select * from emp where deptno =? and sal >= ? select * from emp where deptno =? and sal >= ? 
+2023-11-27 14:52:06 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: -- select * from emp where deptno =? and sal >= ? select * from emp where deptno =? and sal >= ? 
+2023-11-27 14:57:15 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where deptno =? and sal >= ? 
+2023-11-27 14:57:15 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 20(Integer), 3000.0(Double)
+2023-11-27 14:57:15 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- <==      Total: 2
+2023-11-27 14:58:02 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: -- select * from emp where deptno =? and sal >= ? select * from emp where deptno =? and sal >= ? 
+2023-11-27 14:58:49 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where deptno =? and sal >= ? -- select * from emp where deptno =? and sal >= ? 
+2023-11-27 14:59:02 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where deptno =? and sal >= ? -- select * from emp where deptno =? and sal >= ? 
+2023-11-27 14:59:26 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where deptno =? and sal >= ? 
+2023-11-27 14:59:27 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 20(Integer), 3000.0(Double)
+2023-11-27 14:59:27 DEBUG [main] c.m.m.EmpMapperProxy.findByDeptnoAndSal4.debug(BaseJdbcLogger.java:143) -- <==      Total: 2
+2023-11-27 15:06:35 DEBUG [main] c.msb.mapper.EmpMapperProxy.findByEname.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where ename like concat('%',?,'%') 
+2023-11-27 15:06:35 DEBUG [main] c.msb.mapper.EmpMapperProxy.findByEname.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 张(String)
+2023-11-27 15:06:35 DEBUG [main] c.msb.mapper.EmpMapperProxy.findByEname.debug(BaseJdbcLogger.java:143) -- <==      Total: 0
+2023-11-27 15:07:13 DEBUG [main] c.msb.mapper.EmpMapperProxy.findByEname.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select * from emp where ename like concat('%',?,'%') 
+2023-11-27 15:07:13 DEBUG [main] c.msb.mapper.EmpMapperProxy.findByEname.debug(BaseJdbcLogger.java:143) -- ==> Parameters: L(String)
+2023-11-27 15:07:13 DEBUG [main] c.msb.mapper.EmpMapperProxy.findByEname.debug(BaseJdbcLogger.java:143) -- <==      Total: 4
+2023-11-27 15:36:51 DEBUG [main] com.msb.mapper.DeptMapperId.insertDeptId.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: insert into dept values (default,?,?) 
+2023-11-27 15:36:51 DEBUG [main] com.msb.mapper.DeptMapperId.insertDeptId.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 张三(String), 北京(String)
+2023-11-27 15:40:36 DEBUG [main] com.msb.mapper.DeptMapperId.insertDeptId.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: insert into dept values (?,?,?) 
+2023-11-27 15:40:36 DEBUG [main] com.msb.mapper.DeptMapperId.insertDeptId.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 50(Integer), 张三(String), 北京(String)
+2023-11-27 15:40:36 DEBUG [main] com.msb.mapper.DeptMapperId.insertDeptId.debug(BaseJdbcLogger.java:143) -- <==    Updates: 1
+2023-11-27 15:43:12 DEBUG [main] com.msb.mapper.DeptMapperId.insertDeptId.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: insert into dept values (?,?,?) 
+2023-11-27 15:43:12 DEBUG [main] com.msb.mapper.DeptMapperId.insertDeptId.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 50(Integer), 张三(String), 北京(String)
+2023-11-27 15:43:34 DEBUG [main] com.msb.mapper.DeptMapperId.insertDeptId.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: insert into dept values (?,?,?) 
+2023-11-27 15:43:35 DEBUG [main] com.msb.mapper.DeptMapperId.insertDeptId.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 60(Integer), 张三(String), 北京(String)
+2023-11-27 15:43:35 DEBUG [main] com.msb.mapper.DeptMapperId.insertDeptId.debug(BaseJdbcLogger.java:143) -- <==    Updates: 1
+2023-11-27 15:47:49 DEBUG [main] com.msb.mapper.DeptMapperId.insertDeptId.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: insert into dept values (DEFAULT,?,?) 
+2023-11-27 15:47:49 DEBUG [main] com.msb.mapper.DeptMapperId.insertDeptId.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 张三(String), 北京(String)
+2023-11-27 15:47:49 DEBUG [main] com.msb.mapper.DeptMapperId.insertDeptId.debug(BaseJdbcLogger.java:143) -- <==    Updates: 1
+2023-11-27 15:49:54 DEBUG [main] com.msb.mapper.DeptMapperId.insertDeptId.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: insert into dept values (DEFAULT,?,?) 
+2023-11-27 15:49:54 DEBUG [main] com.msb.mapper.DeptMapperId.insertDeptId.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 张三(String), 北京(String)
+2023-11-27 15:49:54 DEBUG [main] com.msb.mapper.DeptMapperId.insertDeptId.debug(BaseJdbcLogger.java:143) -- <==    Updates: 1
+2023-11-27 15:53:08 DEBUG [main] com.msb.mapper.DeptMapperId.insertDeptId.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: insert into dept values (DEFAULT,?,?) 
+2023-11-27 15:53:08 DEBUG [main] com.msb.mapper.DeptMapperId.insertDeptId.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 张三(String), 上海(String)
+2023-11-27 15:53:08 DEBUG [main] com.msb.mapper.DeptMapperId.insertDeptId.debug(BaseJdbcLogger.java:143) -- <==    Updates: 1

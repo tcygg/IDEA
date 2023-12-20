@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.msb.mapper.EmpMapperDml">
     <!--
-    返回单个对象
+    返回单个对象  com.msb.mapper.EmpMapperDml
     public Emp findOne();
     id 相当于方法名
     resultType 相当于返回值类型

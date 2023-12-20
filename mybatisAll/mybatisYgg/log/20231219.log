@@ -1,0 +1,3 @@
+2023-12-19 15:15:21 DEBUG [main] c.m.m.Y.selectByPrimaryKeyDX.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select id_yg,order_no_yg,order_type_yg, order_plan_allnum,order_plan_nownum,order_over_nownum, chaenum,chaenum_now,order_delay_nownum, order_over_rate,order_delay_rate,create_time, update_time,expect_arrival_time,order_update_person, warehouse,order_state,address, factory,production_line,workstation, robot_state,remark_yg,remark2_yg, date_time,jpg_yg from ygg_mybatis_01 
+2023-12-19 15:15:21 DEBUG [main] c.m.m.Y.selectByPrimaryKeyDX.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 
+2023-12-19 15:15:22 DEBUG [main] c.m.m.Y.selectByPrimaryKeyDX.debug(BaseJdbcLogger.java:143) -- <==      Total: 53

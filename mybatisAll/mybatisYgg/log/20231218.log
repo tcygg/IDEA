@@ -1,0 +1,28 @@
+2023-12-18 14:42:59 ERROR [main] com.msb.ceshi.ceshiygg.集合练习(ceshiygg.java:110) -- error信息
+2023-12-18 14:42:59 WARN  [main] com.msb.ceshi.ceshiygg.集合练习(ceshiygg.java:111) -- warn信息
+2023-12-18 14:42:59 INFO  [main] com.msb.ceshi.ceshiygg.集合练习(ceshiygg.java:112) -- info信息
+2023-12-18 14:42:59 DEBUG [main] com.msb.ceshi.ceshiygg.集合练习(ceshiygg.java:113) -- debug信息
+2023-12-18 14:45:46 DEBUG [main] com.msb.ceshi.ceshiygg.meishi(ceshiygg.java:146) -- debug信息
+2023-12-18 14:47:39 DEBUG [main] com.msb.ceshi.ceshiygg.集合练习(ceshiygg.java:109) -- debug信息
+2023-12-18 14:47:39 ERROR [main] com.msb.ceshi.ceshiygg.集合练习(ceshiygg.java:112) -- error信息
+2023-12-18 14:47:39 WARN  [main] com.msb.ceshi.ceshiygg.集合练习(ceshiygg.java:113) -- warn信息
+2023-12-18 14:47:39 INFO  [main] com.msb.ceshi.ceshiygg.集合练习(ceshiygg.java:114) -- info信息
+2023-12-18 14:47:39 DEBUG [main] com.msb.ceshi.ceshiygg.集合练习(ceshiygg.java:115) -- debug信息
+2023-12-18 17:28:12 DEBUG [main] c.m.m.Y.selectByPrimaryKey.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select id_yg,order_no_yg,order_type_yg, order_plan_allnum,order_plan_nownum,order_over_nownum, chaenum,chaenum_now,order_delay_nownum, order_over_rate,order_delay_rate,create_time, update_time,expect_arrival_time,order_update_person, warehouse,order_state,address, factory,production_line,workstation, robot_state,remark_yg,remark2_yg, date_time,jpg_yg from ygg_mybatis_01 where id_yg = ? 
+2023-12-18 17:28:12 DEBUG [main] c.m.m.Y.selectByPrimaryKey.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 25(Long)
+2023-12-18 17:28:12 DEBUG [main] c.m.m.Y.selectByPrimaryKey.debug(BaseJdbcLogger.java:143) -- <==      Total: 1
+2023-12-18 17:35:19 DEBUG [main] c.m.m.Y.selectByPrimaryKey.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select id_yg,order_no_yg,order_type_yg, order_plan_allnum,order_plan_nownum,order_over_nownum, chaenum,chaenum_now,order_delay_nownum, order_over_rate,order_delay_rate,create_time, update_time,expect_arrival_time,order_update_person, warehouse,order_state,address, factory,production_line,workstation, robot_state,remark_yg,remark2_yg, date_time,jpg_yg from ygg_mybatis_01 where id_yg = ? 
+2023-12-18 17:35:19 DEBUG [main] c.m.m.Y.selectByPrimaryKey.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 127(Long)
+2023-12-18 17:35:19 DEBUG [main] c.m.m.Y.selectByPrimaryKey.debug(BaseJdbcLogger.java:143) -- <==      Total: 1
+2023-12-18 17:36:52 DEBUG [main] c.m.m.Y.selectByPrimaryKey.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select id_yg,order_no_yg,order_type_yg, order_plan_allnum,order_plan_nownum,order_over_nownum, chaenum,chaenum_now,order_delay_nownum, order_over_rate,order_delay_rate,create_time, update_time,expect_arrival_time,order_update_person, warehouse,order_state,address, factory,production_line,workstation, robot_state,remark_yg,remark2_yg, date_time,jpg_yg from ygg_mybatis_01 where id_yg > ? 
+2023-12-18 17:36:52 DEBUG [main] c.m.m.Y.selectByPrimaryKey.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 127(Long)
+2023-12-18 17:36:52 DEBUG [main] c.m.m.Y.selectByPrimaryKey.debug(BaseJdbcLogger.java:143) -- <==      Total: 2
+2023-12-18 17:40:10 DEBUG [main] c.m.m.Y.selectByPrimaryKey.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select id_yg,order_no_yg,order_type_yg, order_plan_allnum,order_plan_nownum,order_over_nownum, chaenum,chaenum_now,order_delay_nownum, order_over_rate,order_delay_rate,create_time, update_time,expect_arrival_time,order_update_person, warehouse,order_state,address, factory,production_line,workstation, robot_state,remark_yg,remark2_yg, date_time,jpg_yg from ygg_mybatis_01 where id_yg = ? 
+2023-12-18 17:40:10 DEBUG [main] c.m.m.Y.selectByPrimaryKey.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 127(Long)
+2023-12-18 17:40:10 DEBUG [main] c.m.m.Y.selectByPrimaryKey.debug(BaseJdbcLogger.java:143) -- <==      Total: 1
+2023-12-18 17:40:42 DEBUG [main] c.m.m.Y.selectByPrimaryKey.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select id_yg,order_no_yg,order_type_yg, order_plan_allnum,order_plan_nownum,order_over_nownum, chaenum,chaenum_now,order_delay_nownum, order_over_rate,order_delay_rate,create_time, update_time,expect_arrival_time,order_update_person, warehouse,order_state,address, factory,production_line,workstation, robot_state,remark_yg,remark2_yg, date_time,jpg_yg from ygg_mybatis_01 where id_yg = ? 
+2023-12-18 17:40:42 DEBUG [main] c.m.m.Y.selectByPrimaryKey.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 127(Long)
+2023-12-18 17:40:42 DEBUG [main] c.m.m.Y.selectByPrimaryKey.debug(BaseJdbcLogger.java:143) -- <==      Total: 1
+2023-12-18 17:41:44 DEBUG [main] c.m.m.Y.selectByPrimaryKey.debug(BaseJdbcLogger.java:143) -- ==>  Preparing: select id_yg,order_no_yg,order_type_yg, order_plan_allnum,order_plan_nownum,order_over_nownum, chaenum,chaenum_now,order_delay_nownum, order_over_rate,order_delay_rate,create_time, update_time,expect_arrival_time,order_update_person, warehouse,order_state,address, factory,production_line,workstation, robot_state,remark_yg,remark2_yg, date_time,jpg_yg from ygg_mybatis_01 where id_yg > ? 
+2023-12-18 17:41:44 DEBUG [main] c.m.m.Y.selectByPrimaryKey.debug(BaseJdbcLogger.java:143) -- ==> Parameters: 127(Long)
+2023-12-18 17:41:44 DEBUG [main] c.m.m.Y.selectByPrimaryKey.debug(BaseJdbcLogger.java:143) -- <==      Total: 2
