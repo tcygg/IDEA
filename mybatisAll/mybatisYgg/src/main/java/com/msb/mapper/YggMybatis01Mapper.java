@@ -25,6 +25,9 @@ public interface YggMybatis01Mapper {
 
     List<YggMybatis01> selectByPrimaryKeyDX(List<Integer> empnos);
 
+    List<YggMybatis01> selectByPrimaryKeyAll01();
+
+
 
 
     int updateByPrimaryKeySelective(YggMybatis01 record);

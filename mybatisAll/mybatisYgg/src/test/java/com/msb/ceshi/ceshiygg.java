@@ -1,6 +1,8 @@
 package com.msb.ceshi;
 
 import com.msb.pojo.Emp;
+import com.msb.pojo.YggMybatis01;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +19,7 @@ import java.util.*;
  * @Description: com.msb.ceshi
  * @version: 1.0
  */
+@Slf4j
 public class ceshiygg {
 
 
@@ -144,15 +147,19 @@ public class ceshiygg {
     }
     @Test
     public void meishi(){
-        System.out.println("SELECT `order_no_yg` as \"order_no_yg\",`update_time` as \"update_time\",`create_time` as \"create_time\" FROM( SELECT `order_no_yg` as \"order_no_yg\",`update_time` as \"update_time\",`create_time` as \"create_time\" FROM (SELECT * from ygg_order_01) as t_1c46f3f38dff7b1c WHERE 1=1 ) od_486892 ORDER BY od_486892.order_no_yg ASC LIMIT 1000 "
-        );
-        Logger logger = LoggerFactory.getLogger(ceshiygg.class);
-        logger.debug("debug信息");
-
+        String aa ="SELECT `order_no_yg` as \\\"order_no_yg\\\",`update_time` as \\\"update_time\\\",`create_time` as \\\"create_time\\\" FROM( SELECT `order_no_yg` as \\\"order_no_yg\\\",`update_time` as \\\"update_time\\\",`create_time` as \\\"create_time\\\" FROM (SELECT * from ygg_order_01) as t_1c46f3f38dff7b1c WHERE 1=1 ) od_486892 ORDER BY od_486892.order_no_yg ASC LIMIT 1000 ";
+       /* System.out.println("SELECT `order_no_yg` as \"order_no_yg\",`update_time` as \"update_time\",`create_time` as \"create_time\" FROM( SELECT `order_no_yg` as \"order_no_yg\",`update_time` as \"update_time\",`create_time` as \"create_time\" FROM (SELECT * from ygg_order_01) as t_1c46f3f38dff7b1c WHERE 1=1 ) od_486892 ORDER BY od_486892.order_no_yg ASC LIMIT 1000 "
+        );*/
+        log.debug(aa);
 
     }
     @Test
     public void Yg_order(){
+        YggMybatis01 yggMybatis01 = new YggMybatis01();
+
+
+        System.out.println(yggMybatis01);
+        log.debug("debug信息最近注解");
 
 
 

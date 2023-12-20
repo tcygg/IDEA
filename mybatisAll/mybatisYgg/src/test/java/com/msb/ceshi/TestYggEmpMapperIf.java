@@ -2,7 +2,9 @@ package com.msb.ceshi;
 
 import com.msb.mapper.EmpMapperProxy;
 import com.msb.mapper.YggEmpMapperIf;
+import com.msb.mapper.YggMybatis01Mapper;
 import com.msb.pojo.Emp;
+import com.msb.pojo.YggMybatis01;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -56,6 +58,8 @@ public class TestYggEmpMapperIf {
         }
 
     }
+
+
     @Test
     public void findByCondition2() throws ParseException {
         YggEmpMapperIf empMapper = sqlSession.getMapper(YggEmpMapperIf.class);

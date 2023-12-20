@@ -5,7 +5,7 @@
 <mapper namespace="com.msb.mapper.YggMybatis01Mapper">
 
     <resultMap id="BaseResultMap" type="com.msb.pojo.YggMybatis01">
-            <id property="idYg" column="id_yg" jdbcType="BIGINT"/>
+            <id property="idYg" column="id_yg" jdbcType="INTEGER"/>
             <result property="orderNoYg" column="order_no_yg" jdbcType="VARCHAR"/>
             <result property="orderTypeYg" column="order_type_yg" jdbcType="VARCHAR"/>
             <result property="orderPlanAllnum" column="order_plan_allnum" jdbcType="BIGINT"/>
@@ -59,11 +59,23 @@
         where  id_yg > #{idYg,jdbcType=BIGINT}
     </select>
 
-    <select id="selectByPrimaryKeyDX" parameterType="java.lang.Long" resultType="yggMybatis01">
+    <select id="selectByPrimaryKeyDX" parameterType="java.lang.Long" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List" />
         from ygg_mybatis_01
-        where  id_yg = #{idYg,jdbcType=BIGINT}
+        where  id_yg in
+        <foreach collection="list" separator="," open="(" close=")" item="idYg1">
+            #{idYg1}
+        </foreach>
+
+    </select>
+
+
+    <select id="selectByPrimaryKeyAll01" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+
+        from ygg_mybatis_01 where id_yg =20
 
     </select>
 
@@ -72,8 +84,9 @@
 
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
         delete from ygg_mybatis_01
-        where  id_yg > #{idYg,jdbcType=BIGINT}
+        where  id_yg = #{idYg,jdbcType=BIGINT}
     </delete>
+
     <insert id="insert" keyColumn="id_yg" keyProperty="idYg" parameterType="com.msb.pojo.YggMybatis01" useGeneratedKeys="true">
         insert into ygg_mybatis_01
         ( id_yg,order_no_yg,order_type_yg

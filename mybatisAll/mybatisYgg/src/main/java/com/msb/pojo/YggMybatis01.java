@@ -2,13 +2,25 @@ package com.msb.pojo;
 
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
+
+import lombok.*;
 
 /**
  * 
  * @TableName ygg_mybatis_01
  */
 @Data
+/*
+@Data
+整合包，只要加了 @Data 这个注解，等于同时加了以下注解
+@Getter/@Setter
+@ToString
+@EqualsAndHashCode
+@RequiredArgsConstructor //这个就是生成  final修饰符的字段,自动生成构造器
+*/
+
+@AllArgsConstructor
+@NoArgsConstructor
 public class YggMybatis01 implements Serializable {
     /**
      * yg订单表主键id
