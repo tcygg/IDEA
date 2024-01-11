@@ -154,6 +154,11 @@ public class YggMybatis01 implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    public YggMybatis01(Integer idYg, String orderNoYg) {
+        this.idYg = idYg;
+        this.orderNoYg = orderNoYg;
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {

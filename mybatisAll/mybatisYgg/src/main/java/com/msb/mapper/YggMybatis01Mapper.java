@@ -34,4 +34,5 @@ public interface YggMybatis01Mapper {
 
     int updateByPrimaryKey(YggMybatis01 record);
 
+
 }

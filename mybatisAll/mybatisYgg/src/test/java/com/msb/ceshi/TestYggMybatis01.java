@@ -1,5 +1,6 @@
 package com.msb.ceshi;
 
+import cn.hutool.core.io.LineHandler;
 import com.alibaba.fastjson.JSON;
 import com.msb.mapper.YggMybatis01Mapper;
 import com.msb.pojo.YggMybatis01;
@@ -57,6 +58,20 @@ public class TestYggMybatis01 {
 
 
 
+
+
+    }
+    @Test
+    public void ceshiYGG() throws ParseException{
+
+
+        YggMybatis01 yggMybatis01 = new YggMybatis01(200,"asn-6009");
+        System.out.println(yggMybatis01.getIdYg()+yggMybatis01.getOrderNoYg());
+        LineHandler lineHandler = (String aabb) -> System.out.println(aabb);
+
+        int dd;
+
+//        dd= (int a,int b)->a+b;
 
 
     }
