@@ -1,20 +1,21 @@
-package com.mashibing.lambda.demo03;
+package com.msb.ceshi;
 
 /**
  * @Auther: TcYgg
- * @Date: 2024/1/11 - 01 - 11 - 18:26
- * @Description: com.mashibing.lambda.demo03
+ * @Date: 2024/1/12 - 01 - 12 - 16:01
+ * @Description: com.msb.ceshi
  * @version: 1.0
  */
 public class Person {
+
     String Name;
     Integer Age;
-    Integer OLD;
+    Integer Old;
 
     public Person(String name, Integer age, Integer OLD) {
         Name = name;
         Age = age;
-        this.OLD = OLD;
+        this.Old = Old;
     }
 
     public String getName() {
@@ -34,11 +35,11 @@ public class Person {
     }
 
     public Integer getOLD() {
-        return OLD;
+        return Old;
     }
 
-    public void setOLD(Integer OLD) {
-        this.OLD = OLD;
+    public void setOLD(Integer Old) {
+        this.Old = Old;
     }
 
     @Override
@@ -46,7 +47,8 @@ public class Person {
         return "Person{" +
                 "Name='" + Name + '\'' +
                 ", Age=" + Age +
-                ", OLD=" + OLD +
+                ", Old=" + Old +
                 '}';
     }
+
 }

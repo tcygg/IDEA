@@ -1,5 +1,6 @@
 package com.mashibing.lambda.demo03;
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -140,9 +141,10 @@ public class StreamTest05 {
             System.out.println(person);
         }
 
+        System.out.println(collect.getClass());
         System.out.println("----------");
 
-        List<Person> list2 = new ArrayList<>();
+       /* List<Person> list2 = new ArrayList<>();
         list2.add(new Person("马化腾",25,3000));
         list2.add(new Person("李彦宏",27,2545));
         list2.add(new Person("雷军",35,4515));
@@ -152,6 +154,160 @@ public class StreamTest05 {
         // 输出马云和马化腾
         set.forEach(System.out::println);
 
+
+
+*/
+
+        String[] arrs1 = {"11","aa22","aa33","aa11","aa11"};
+
+        String[] arrs2 = {"11","22","33","11"};
+
+        Stream<String> ss =Stream.of(arrs1);
+
+//        ss.forEach(System.out::println);
+//        () -> ss(s -> Integer.parseInt(ss))
+//        ss.forEach(s -> System.out.println(Integer.parseInt(s)));
+
+//        ss.map(s -> Integer.parseInt(s)).forEach(System.out::println);
+
+//        ss.map(s -> Double.parseDouble(s)).forEach(System.out::println);
+
+//        Long aaa =ss.filter(s -> s.equals("11")).count();
+
+
+//                ss.filter(s -> s.startsWith("aa")).collect(Collectors.toList()).forEach(System.out::println);
+
+
+//        List<String> listaaa = ss.filter(s -> s.startsWith("aa")).collect(Collectors.toList());
+
+
+        Set<String> listaaa = ss.filter(s -> s.startsWith("aa")).collect(Collectors.toSet());
+
+
+//        List<String> listaaa = ss.filter(s -> s.startsWith("aa")).collect(Collectors.toList());
+
+
+
+        listaaa.forEach(System.out::println);
+        System.out.println(listaaa);
+
+
+
+
+//        System.out.println(aaa);
+
+
+
+//        System.out.println(ss.getClass());
+
+
+
+        String[] arrName = {"zhangsan,28","周杰伦,89","许嵩,33","王菲,29","jack,13"};
+
+
+//        Arrays.stream(arrName).filter();
+
+//        Stream.of(arrName).filter(s -> Integer.parseInt(s.split(",")[1])>1).forEach(System.out::println);
+
+
+        List<String> accb =Stream.of(arrName).filter(s -> Integer.parseInt(s.split(",")[1])>1).collect(Collectors.toList());
+
+        System.out.println(accb.get(0));
+
+
+//        Arrays.stream(arrName).collect(Collectors.toList()).forEach(System.out::println);
+
+        List<String> bba = Arrays.stream(arrName).collect(Collectors.toList());
+
+        System.out.println(bba);
+
+
+
+/*        String aba ="wohaha,aa";
+        System.out.println(aba.split(","));*/
+
+
+//        System.out.println(arrName[1].split(","));
+
+//        String [] DD = arrName[1].split(",");
+
+/*        for (String s : DD) {
+            System.out.println(s);
+
+        }*/
+//        if (Integer.parseInt(DD[1])>1111){
+//            System.out.println("nishizhu1");
+//        }else {System.out.println("cuowu");}
+
+
+//        System.out.println(DD[0]);
+       /* Stream<String> ygg = Stream.of(arrName);
+        ygg.filter()*/
+
+
+
+
+        String[] arrName22 = {"zhangsan,28","周杰伦,89","许嵩,33","王菲,29","jack,13"};
+
+        Map<String,Integer> ceshiMap =Arrays.stream(arrName22).collect(Collectors.toMap(
+
+                s->s.split(",")[0],
+                s -> Integer.parseInt(s.split(",")[1])
+        ));
+
+        System.out.println(ceshiMap.keySet());
+
+//        ceshiMap.forEach(s-> System.out.println(s));
+
+
+/*        ceshiMap.forEach((key,value)->{
+            System.out.println(key+"="+value);
+//            System.out.println(value);
+        });*/
+
+
+        ceshiMap.entrySet().stream().forEach((Map.Entry<String, Integer> entry) -> {
+            System.out.println(entry.getKey());
+            System.out.println(entry.getValue());
+        });
+
+
+  /*      Arrays.stream(arrName22).collect(Collectors.toMap(
+
+                s->s.split(",")[0],
+                s -> Integer.parseInt(s.split(",")[1])
+        )).forEach((Map.Entry<String, Integer> entry) ->{
+            System.out.println(entry.getKey());
+            System.out.println(entry.getValue());
+        });*/
+
+        ceshiMap.forEach((key,value)->System.out.println(key+" : "+value));
+
+       /* public static void forEach_map(Map<Integer,String> map){
+            System.out.println("map.forEach(BiConsumer action)方法遍历map");
+            map.forEach((key,value) -> System.out.println(key+" : "+value));
+
+        }*/
+        System.out.println("---------------");
+
+        System.out.println(ceshiMap.entrySet());
+
+        Set<Map.Entry<String, Integer>> entries = ceshiMap.entrySet();
+
+        for (Map.Entry<String, Integer> stringIntegerEntry : ceshiMap.entrySet()) {
+            System.out.println(stringIntegerEntry);
+
+        }
+
+
+        System.out.println(ceshiMap);
+
+        System.out.println(ceshiMap.keySet());
+
+        for (String woshi:ceshiMap.keySet()) {
+            System.out.println(woshi+":"+ceshiMap.get(woshi));
+
+        }
 
 
     }
