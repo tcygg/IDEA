@@ -1,0 +1,48 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /pms
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/pms?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: zxwdzhang
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 5000
+      maximum-pool-size: 200
+      minimum-idle: 5
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy #开启驼峰命名
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect #建表时指定使用innodb 引擎
+  thymeleaf:
+    cache: false
+    mode: HTML5
+  quartz:
+    job-store-type: memory
+    properties:
+      org:
+        quartz:
+          threadPool:
+            class: org.quartz.simpl.SimpleThreadPool
+            threadCount: 2
+jwt:
+  expiration: 30 # 过期时间 单位分钟
+  time-out: 30   # 超时时间 单位分钟
+  secret: uKd?J|tt9wE[._U+$==X?-@#NZ\,Um=@
+sys:
+  initPassword: 123123
+
+logging:
+  config: classpath:logback-test.xml
+
+qiniu:
+  oos:
+    AccessKey: 1c611FXpkgS-Pn72mOEO2Qpi2SjH1BvunKnuGV4W
+    SecretKey: svnb40h-tDXlJEvMkAwQmtMt77B3bBef0zxyhaSZ
+    bucket: pms
+    domain: http://pux0w2a64.bkt.clouddn.com
