@@ -23,19 +23,7 @@ public class cehiygg001 {
     public void cehhi1() {
 
 //        Thread thread = new Thread(s-> System.out.println("dki"));
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("nishizhuy1" + Thread.currentThread().getName());
-            }
-        }).start();
-
-        System.out.println("这是主线程" + Thread.currentThread().getName());
-
-        new Thread(() -> {
-            System.out.println("新线程Lambda表达式..." + Thread.currentThread().getName());
-        }).start();
+        System.out.println("SELECT\n      \"lxk_test6\".factory \"lxk_test6__factory\", count(distinct \"lxk_test6\".num2) \"lxk_test6__count_distinct_num2\"\n    FROM\n      (select * from lxk_test1_0927 where 1 = 1) AS \"lxk_test6\"  GROUP BY 1 ORDER BY 2 DESC LIMIT 1000");
 
     }
 
