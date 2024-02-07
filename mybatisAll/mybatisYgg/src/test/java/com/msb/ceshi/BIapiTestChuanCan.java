@@ -105,6 +105,26 @@ public class BIapiTestChuanCan {
         System.out.println(URLDecoder.decode(encodeStr,"UTF-8"));
 */
 
+/*  下面是使用fastjson将str转换成java的对象,如果是实体类,就直接写实体类的地址class
+
+        String jsonStr = "{\n" +
+                "  \"cityDescribe\": \"宁波是港口城市\",\n" +
+                "  \"cityId\": 2023062802,\n" +
+                "  \"cityName\": \"宁波\",\n" +
+                "  \"updateTime\": \"2023-07-16 13:15:40\"\n" +
+                "}";
+        System.out.println("====================f2====================");
+        JSONObject obj = JSON.parseObject(jsonStr, JSONObject.class);
+        System.out.println(obj.get("cityId"));
+        System.out.println(obj.get("cityName"));
+        System.out.println(obj.get("cityDescribe"));
+        System.out.println(obj.get("updateTime"));
+
+*/
+
+
+
+
 
     }
 }
