@@ -25,6 +25,16 @@
         <url-pattern>/loginServlet.do</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ServletMap01</servlet-name>
+        <servlet-class>com.ygg.servletdome1.ServletMap01</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletMap01</servlet-name>
+        <url-pattern>/ServletMap01.do</url-pattern>
+    </servlet-mapping>
+
 <!--就是默认首次进入,不输入路径的时候,欢迎页面使用哪个文件-->
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
