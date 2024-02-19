@@ -35,11 +35,48 @@
         <url-pattern>/ServletMap01.do</url-pattern>
     </servlet-mapping>
 
+
+    <servlet>
+        <servlet-name>ServletCTX01</servlet-name>
+        <servlet-class>com.ygg.servletdome1.ServletCTX01</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletCTX01</servlet-name>
+        <url-pattern>/ServletCTX01.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletCTX02</servlet-name>
+        <servlet-class>com.ygg.servletdome1.ServletCTX02</servlet-class>
+        <init-param>
+            <param-name>aakey</param-name>
+            <param-value>aavalue</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletCTX02</servlet-name>
+        <url-pattern>/ServletCTX02.do</url-pattern>
+    </servlet-mapping>
+
 <!--就是默认首次进入,不输入路径的时候,欢迎页面使用哪个文件-->
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.htm</welcome-file>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+
+
+
+
+    <context-param>
+        <param-name>username</param-name>
+        <param-value>ygg</param-value>
+    </context-param>
+    <context-param>
+        <param-name>password</param-name>
+        <param-value>123123</param-value>
+    </context-param>
 
 </web-app>
