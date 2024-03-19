@@ -51,6 +51,18 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.2</version>
             </plugin>
+            <!-- 配置Tomcat插件 -->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <!-- 配置Tomcat监听端口 -->
+                    <port>8080</port>
+                    <!-- 配置项目的访问路径(Application Context) -->
+                    <path>/</path>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>

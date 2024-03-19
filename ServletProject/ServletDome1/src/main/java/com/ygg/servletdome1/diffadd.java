@@ -41,9 +41,9 @@ public class diffadd {
                     "\t\t\t\tLEFT JOIN dim_cp_device_info d1 ON t0.project = d1.project \n" +
                     "\t\t\t\tAND t0.device_code = d1.device_code \n" +
                     "\t\t\tWHERE\n" +
-                    "\t\t\t\tprocess_tm >= '2023-12-21 00:00:00' \n" +
-                    "\t\t\t\tAND process_tm < '2023-12-22 00:00:00' \n" +
-                    "\t\t\t\tAND t0.project = 'M3' \n" +
+                    "\t\t\t\tprocess_tm >= '2024-02-26 09:00:00' \n" +
+                    "\t\t\t\tAND process_tm < '2024-02-26 17:33:12' \n" +
+                    "\t\t\t\tAND t0.project = 'N3' \n" +
                     "\t\t\t\tAND product_mode <> 'offline' \n" +
                     "\t\t\t\tAND test_item <> 'null' \n" +
                     "\t\t\t\tAND COALESCE ( slot, '' ) <> '' \n" +
@@ -53,7 +53,7 @@ public class diffadd {
                     "\t\tWHERE\n" +
                     "\t\t\t1 = 1 \n" +
                     "\t\t\tAND process_section_code = 'FAT' \n" +
-                    "\t\t\tAND line_code = 'Z01' \n" +
+                    "\t\t\tAND line_code = 'Z02' \n" +
                     "\t\t\tAND COALESCE ( line_code, '' ) <> '' \n" +
                     "\t\t\tAND (\n" +
                     "\t\t\t\t( process_section_code = 'SAT' AND NOT ( hi_limit <= 0.1 AND low_limit >= - 0.1 ) ) \n" +

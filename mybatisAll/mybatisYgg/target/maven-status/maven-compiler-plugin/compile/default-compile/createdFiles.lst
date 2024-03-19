@@ -1,4 +1,4 @@
-com/msb/mapper/EmpMapperCeshi.class
-com/msb/mapper/EmpMapperProxy.class
-com/msb/pojo/Dept.class
-com/msb/pojo/Emp.class
+com\msb\pojo\Dept.class
+com\msb\mapper\EmpMapperProxy.class
+com\msb\pojo\Emp.class
+com\msb\mapper\EmpMapperCeshi.class

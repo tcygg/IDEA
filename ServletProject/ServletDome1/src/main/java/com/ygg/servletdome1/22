@@ -1,0 +1,376 @@
+SELECT
+	"work_station_code" AS "work_station_code",
+	AVG( NULLIF( TRIM( "great_cpk_rate" :: VARCHAR ), '' ):: NUMERIC ) AS "AVG(`great_cpk_rate`)"
+FROM
+	(
+		WITH t1_1 AS (
+		SELECT
+			*
+		FROM
+			(
+			SELECT
+				factory_code,
+				t0.project,
+				COALESCE ( t0.process_section_code, d1.process_section_code ) AS process_section_code,
+				COALESCE ( t0.line_code, d1.line_code ) AS line_code,
+				COALESCE ( t0.work_station_code, d1.work_station_code ) AS work_station_code,
+				t0.device_code,
+				process_result,
+				function_name,
+				test_item,
+				test_result,
+				test_desc,
+				hi_limit,
+				low_limit,
+				result_val,
+				sn,
+				test_item_seq,
+				test_tm
+			FROM
+				dwd_prod_process_test_items_log_ri t0
+				LEFT JOIN dim_cp_device_info d1 ON t0.project = d1.project
+				AND t0.device_code = d1.device_code
+			WHERE
+				process_tm >= '2024-02-26 09:00:00'
+				AND process_tm < '2024-02-26 17:33:12'
+				AND t0.project = 'N3'
+				AND product_mode <> 'offline'
+				AND test_item <> 'null'
+				AND COALESCE ( slot, '' ) <> ''
+				AND slot <> 'null'
+				AND NOT ( hi_limit = 99999999.99 AND low_limit = - 99999999.99 )
+			) t_a
+		WHERE
+			1 = 1
+			AND process_section_code = 'FAT'
+			AND line_code = 'Z02'
+			AND COALESCE ( line_code, '' ) <> ''
+			AND (
+				( process_section_code = 'SAT' AND NOT ( hi_limit <= 0.1 AND low_limit >= - 0.1 ) )
+				OR (
+					process_section_code = 'MBA'
+					AND (
+						(
+							work_station_code = 'MBACF'
+						AND ( test_item LIKE '%Attach%' ))
+						OR (
+							work_station_code = 'MBBS'
+						AND ( test_item LIKE '%Attach%' ))
+						OR (
+							work_station_code = 'MBACP'
+						AND ( test_item LIKE '%Attach%' ))
+						OR (
+							work_station_code = 'MBAGF'
+						AND ( test_item LIKE '%Attach%' ))
+					)
+				)
+				OR (
+					process_section_code = 'PFA'
+					AND (
+						(
+							work_station_code = 'TPAPF'
+						AND ( test_item LIKE '%Tp_Screen_Film_Pressuer%' OR test_item LIKE '%Tp_Screen_Film_Inspect%' ))
+						OR (
+							work_station_code = 'FAAFF'
+						AND ( test_item LIKE '%FrontBracket_Camera%' OR test_item LIKE '%FrontBracket_Sucker%' OR test_item LIKE '%Receiver_-_%' ))
+						OR (
+							work_station_code = 'RMP'
+						AND ( test_item LIKE '%Motor_Indenter_Press_Pressure%' OR test_item LIKE '%Receiver_Indenter_Press_Pressure%' ))
+						OR (
+							work_station_code = 'TGA'
+						AND ( test_item LIKE '%TP_Indenter_Press%' AND test_item NOT LIKE '%TP_Indenter_Press_Usingtimes%' ))
+					))
+				OR (
+					process_section_code = 'FA'
+					AND (
+						( work_station_code = 'BCALP' AND test_item LIKE '%_-_Lens_Attach%' )
+						OR (
+							work_station_code = 'BAP'
+						AND ( test_item LIKE '%Roll_Pressure%' OR test_item LIKE '%time%' ))
+						OR ( work_station_code = 'BCPF' AND test_item LIKE '%pressure%' )
+						OR ( work_station_code = 'BCPFC' AND ( test_item LIKE '%pressure%' OR test_item LIKE '%time%' ) )
+					))
+				OR ( process_section_code = 'FAT' )
+			)
+		),
+		t1_2 AS (
+		SELECT
+			factory_code,
+			project,
+			t1_1.process_section_code,
+			line_code,
+			t1_1.work_station_code,
+			process_result,
+			function_name,
+			test_item,
+			test_result,
+			test_desc,
+			round( hi_limit :: NUMERIC, 2 ) :: VARCHAR AS hi_limit_original,
+			round( low_limit :: NUMERIC, 2 ) :: VARCHAR AS low_limit_original,
+		CASE
+
+				WHEN ((
+						t1_1.work_station_code LIKE '%MBBS%'
+						AND test_item LIKE '%Pressure%'
+						)
+					OR ( t1_1.work_station_code LIKE '%MBACP%' AND test_item LIKE '%BigCopperFoil%' )) THEN
+					5 ELSE hi_limit
+				END AS hi_limit,
+			CASE
+
+					WHEN ( t1_1.work_station_code LIKE '%RAUD%' AND function_name IN ( 'BottomSpeaker', 'BottomSpeakerHP', 'MainMic', 'Receiver', 'TopMic', 'TopSpeaker', 'TopSpeakerHP' ) AND low_limit = - 0.1 ) THEN
+					- 99999999.99
+					WHEN ((
+							t1_1.work_station_code LIKE '%MBBS%'
+							AND test_item LIKE '%Pressure%'
+							)
+						OR ( t1_1.work_station_code LIKE '%MBACP%' AND test_item LIKE '%BigCopperFoil%' )) THEN
+						- 5 ELSE low_limit
+					END AS low_limit,
+				CASE
+
+						WHEN ( t1_1.process_section_code = 'MBA' AND test_item LIKE '%Nozzle_Attach%' ) THEN
+						result_val * 0.0086 ELSE result_val
+					END AS result_val,
+					devi_val,
+					test_val_coeff,
+					sn,
+					row_number () over ( PARTITION BY project, t1_1.process_section_code, t1_1.work_station_code, function_name, test_item, hi_limit, low_limit, sn ORDER BY test_tm, test_item_seq ) AS order_esc,
+					row_number () over ( PARTITION BY project, t1_1.process_section_code, t1_1.work_station_code, function_name, test_item, hi_limit, low_limit, sn ORDER BY test_tm DESC, test_item_seq DESC ) AS order_desc,
+				CASE
+
+						WHEN d.process_section_code IS NULL THEN
+						0 ELSE 1
+					END AS flag
+				FROM
+					t1_1
+					LEFT JOIN dim_procescc_section_devi d ON t1_1.process_section_code = d.process_section_code
+					AND t1_1.work_station_code = d.work_station_code
+				),
+				t1_3 AS (
+				SELECT
+					factory_code,
+					project,
+					process_section_code,
+					line_code,
+					work_station_code,
+					function_name,
+					test_item,
+					hi_limit,
+					low_limit,
+					hi_limit_original,
+					low_limit_original,
+					count( DISTINCT sn ) AS sample_size,
+					sum( CASE WHEN order_esc = 1 AND test_result = 'PASS' THEN 1 ELSE 0 END ) AS pass_num_first,
+					sum( CASE WHEN order_desc = 1 AND test_result = 'PASS' THEN 1 ELSE 0 END ) AS pass_num_final,
+					avg( CASE WHEN test_result = 'PASS' THEN result_val ELSE NULL END ) AS avg_val,
+					stddev_pop( CASE WHEN test_result = 'PASS' THEN result_val ELSE NULL END ) AS std_val,
+					max( test_val_coeff ) AS test_val_coeff,
+					max( devi_val ) AS devi_val,
+					flag
+				FROM
+					t1_2
+				GROUP BY
+					factory_code,
+					project,
+					process_section_code,
+					line_code,
+					work_station_code,
+					function_name,
+					test_item,
+					hi_limit_original,
+					low_limit_original,
+					low_limit,
+					hi_limit,
+					flag
+				),
+				t1 AS (
+				SELECT
+					factory_code,
+					project,
+					process_section_code,
+					line_code,
+					work_station_code,
+					function_name,
+					test_item,
+					hi_limit_original,
+					low_limit_original,
+				CASE
+
+						WHEN ( flag = 1 AND process_section_code = 'MBA' ) THEN
+						avg_val + abs( hi_limit )
+						WHEN (
+							flag = 1
+							AND ( process_section_code = 'PFA' OR process_section_code = 'FA' )) THEN
+							avg_val + devi_val ELSE hi_limit
+						END AS hi_limit,
+					CASE
+
+							WHEN ( flag = 1 AND process_section_code = 'MBA' ) THEN
+							avg_val - abs( low_limit )
+							WHEN (
+								flag = 1
+								AND ( process_section_code = 'PFA' OR process_section_code = 'FA' )) THEN
+								avg_val - devi_val ELSE low_limit
+							END AS low_limit,
+							sample_size,
+							pass_num_first,
+							pass_num_final,
+							avg_val,
+							std_val
+						FROM
+							t1_3
+						),
+						t2 AS (
+						SELECT
+							t1.*,
+							process_section_name,
+							work_station_name,
+							( hi_limit + low_limit )/ 2 AS spec_center,
+							( hi_limit - low_limit ) AS spec_tolerance,
+						CASE
+
+								WHEN pass_num_first = 0
+								OR sample_size = 0 THEN
+									0 ELSE pass_num_first / CAST( sample_size AS NUMERIC )
+									END AS item_rate_first,
+							CASE
+
+									WHEN pass_num_final = 0
+									OR sample_size = 0 THEN
+										0 ELSE pass_num_final / CAST( sample_size AS NUMERIC )
+										END AS item_rate_final,
+								CASE
+
+										WHEN hi_limit = 99999999.99 THEN
+										99999999.99 ELSE
+									CASE
+
+											WHEN std_val <= 0.00001 THEN
+											2.68 ELSE ( hi_limit - avg_val )/(
+												3 * std_val
+											)
+										END
+										END AS cpu_val,
+									CASE
+
+											WHEN low_limit =- 99999999.99 THEN
+											- 99999999.99 ELSE
+										CASE
+
+												WHEN std_val <= 0.00001 THEN
+												2.68 ELSE ( avg_val - low_limit )/(
+													3 * std_val
+												)
+											END
+											END AS cpl_val
+										FROM
+											t1
+											LEFT JOIN ( SELECT DISTINCT project, process_section_code, process_section_name, line_code, work_station_code, work_station_name FROM dim_cp_device_info ) d1 ON t1.project = d1.project
+											AND t1.process_section_code = d1.process_section_code
+											AND t1.line_code = d1.line_code
+											AND t1.work_station_code = d1.work_station_code
+										),
+										t3 AS (
+										SELECT
+											factory_code,
+											project,
+											process_section_code,
+											process_section_name,
+											line_code,
+											work_station_code,
+											work_station_name,
+											function_name,
+											test_item,
+											hi_limit_original,
+											low_limit_original,
+											round( hi_limit :: NUMERIC, 2 ) AS hi_limit,
+											round( low_limit :: NUMERIC, 2 ) AS low_limit,
+										CASE
+
+												WHEN hi_limit = 99999999.99 THEN
+												'null' ELSE round( hi_limit :: NUMERIC, 2 ) :: VARCHAR
+											END AS hi_limit_change,
+										CASE
+
+												WHEN low_limit = - 99999999.99 THEN
+												'null' ELSE round( low_limit :: NUMERIC, 2 ) :: VARCHAR
+											END AS low_limit_change,
+											sample_size :: VARCHAR AS sample_size,
+											concat_ws(
+												'/',
+												round( pass_num_first :: NUMERIC ) :: VARCHAR,
+											concat( round( item_rate_first * 100, 2 ), '%' )) AS pass_num_first,
+											concat_ws(
+												'/',
+												round( pass_num_final :: NUMERIC ) :: VARCHAR,
+											concat( round( item_rate_final * 100, 2 ), '%' )) AS pass_num_final,
+											avg_val,
+											std_val,
+											spec_center,
+											spec_tolerance,
+											cpu_val,
+											cpl_val,
+										CASE
+
+												WHEN hi_limit <> 99999999.99
+												AND low_limit =- 99999999.99 THEN
+													round( cpu_val :: NUMERIC, 2 )
+													WHEN hi_limit = 99999999.99
+													AND low_limit <> - 99999999.99 THEN
+														round( cpl_val :: NUMERIC, 2 )
+														WHEN hi_limit <> 99999999.99
+														AND low_limit <> - 99999999.99
+														AND hi_limit <> low_limit THEN
+														CASE
+
+																WHEN cpu_val < cpl_val THEN
+																round( cpu_val :: NUMERIC, 2 ) ELSE round( cpl_val :: NUMERIC, 2 )
+															END ELSE 2.68
+														END AS cpk_val
+													FROM
+														t2
+													),
+													t4 AS (
+													SELECT
+														*,
+													CASE
+
+															WHEN cpk_val > 1.67 THEN
+															'CPK>1.67'
+															WHEN cpk_val > 1.33
+															AND cpk_val <= 1.67 THEN 'CPK>1.33且<=1.67' WHEN cpk_val > 1.00
+																AND cpk_val <= 1.33 THEN 'CPK>1.00且<=1.33' WHEN cpk_val > 0.67
+																	AND cpk_val <= 1.00 THEN 'CPK>0.67且<=1.00' WHEN cpk_val <= 0.67 THEN 'CPK<=0.67' ELSE 'null' END AS cpk_type, CASE WHEN cpk_val > 1.67 THEN 'A+' WHEN cpk_val > 1.33
+																		AND cpk_val <= 1.67 THEN 'A' WHEN cpk_val > 1.00
+																			AND cpk_val <= 1.33 THEN 'B' WHEN cpk_val > 0.67
+																				AND cpk_val <= 1.00 THEN
+																					'C'
+																					WHEN cpk_val <= 0.67 THEN
+																					'D' ELSE 'null'
+																				END AS cpk_level
+																			FROM
+																				t3
+																			WHERE
+																				cpk_val IS NOT NULL
+																			) SELECT
+																			*,
+																		CASE
+
+																				WHEN cpk_level <> 'null' THEN
+																				1 ELSE 0
+																			END num,
+															CASE
+
+																	WHEN count(*) filter ( WHERE cpk_level = 'A+' OR cpk_level = 'A' OR cpk_level = 'B' ) over my_win != 0 THEN
+																	count(*) filter ( WHERE cpk_level = 'A+' OR cpk_level = 'A' OR cpk_level = 'B' ) over my_win * 1.0 / count(*) over my_win ELSE 0
+																END AS great_cpk_rate
+															FROM
+															t4 window my_win AS ( PARTITION BY factory_code, project, process_section_code, process_section_name, line_code, work_station_code )) AS t_3dc278e916ec576d
+														WHERE
+															1 = 1
+														GROUP BY
+															work_station_code
+														HAVING
+														1 = 1
+	LIMIT 50
