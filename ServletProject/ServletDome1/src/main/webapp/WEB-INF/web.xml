@@ -61,10 +61,11 @@
     </servlet-mapping>
 
 <!--就是默认首次进入,不输入路径的时候,欢迎页面使用哪个文件-->
+<!--就是默认首次进入,不输入路径的时候,欢迎页面使用哪个文件-->
     <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
-        <welcome-file>index.htm</welcome-file>
-        <welcome-file>index.jsp</welcome-file>
+<!--        <welcome-file>index.html</welcome-file>-->
+<!--        <welcome-file>index.htm</welcome-file>-->
+        <welcome-file>HtmlJson01.html</welcome-file>
     </welcome-file-list>
 
 
